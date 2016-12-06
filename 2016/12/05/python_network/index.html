@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Python,Network," />
 
 
 
@@ -84,12 +84,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Boolean's Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="主要是一些关于python接入网络的一些学习笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python网络内容">
+<meta property="og:url" content="http://yoursite.com/2016/12/05/python_network/index.html">
 <meta property="og:site_name" content="Boolean's Blog">
+<meta property="og:description" content="主要是一些关于python接入网络的一些学习笔记。">
+<meta property="og:updated_time" content="2016-12-06T02:16:42.537Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Boolean's Blog">
+<meta name="twitter:title" content="python网络内容">
+<meta name="twitter:description" content="主要是一些关于python接入网络的一些学习笔记。">
 
 
 
@@ -107,7 +111,7 @@
   };
 </script>
 
-  <title> Boolean's Blog </title>
+  <title> python网络内容 | Boolean's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -128,9 +132,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -207,9 +209,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -229,10 +231,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/12/05/python_network/" itemprop="url">
-                  python网络内容
-                </a>
+                python网络内容
               
             
           </h1>
@@ -291,269 +290,73 @@
       
 
       
-        
-          <p>主要是一些关于python接入网络的一些学习笔记。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/05/python_network/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
+        <p>主要是一些关于python接入网络的一些学习笔记。</p>
+<a id="more"></a>
+<p>#网络相关</p>
+<p>##套接字（socket）<br>套接字这个东西在之前的计网课上曾经学过，他可以说是一种在传输层之间连接方式的抽象。抛开更底层的链路之类，网络通信相当于两个终端分别将信息放进传输层，然后相互通信的过程。<br>对于python来说，在文件系统的文件句柄一样，可以通过文件句柄来访问文件；套接字和它类似，就像飞机的舷窗，程序通过socket可以访问到另一端的数据。</p>
+<p>##端口<br>端口这个东西是用来区分连接到同一台机器上的不同进程的功能的。比如一个服务器可以提供Web server、Login、email等等许多功能，浏览器发来连接请求，需要进行页面访问，那么就会通过服务器的80号端口访问，这个端口进来的所有请求都由Web server来处理。理论上端口号可以随便选择，比如说你在和室友玩WAR3对战的时候可以手动选择一个数字较大的空余端口作为局域网连接，但是也有一些端口是大家常用的。比如http(80)、Telnet(23)、SSH(22)、DNS(53)等等。</p>
+<p>##Python中如何实现<br>好消息是在Python中想要实现这些并不需要太复杂，因为我们有一个很好的库叫做socket。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import socket</div><div class="line">mysocket = soket.socket(socket.AF_INET, socket.SOCK_STREAM)</div><div class="line">mysocket.connect((&apos;www.py4inf.com&apos;,80))</div></pre></td></tr></table></figure></p>
+<p>这样就打开了一个socket，mysocket这个变量就像文件句柄一样，可以通过它来访问web server。</p>
+<p>#HTTP协议</p>
+<p>##原理<br>HTTP协议的标准文档很长，有两三百页，但是他的思想却很简单，就是一个个请求-响应周期的循环。首先建立连接，之后发出请求，服务器收到请求后会返回一个文档，之后关闭连接。你可以通过telnet指令模拟这个过程，欺骗服务器以为你是正常的浏览器发出的请求。同样大部分的浏览器都带有一个开发者工具，在里面可以看到一个网页在打开的过程中具体经历了什么，比如请求html文件，请求css文件等等。</p>
+<p>##Python怎么办<br>和上边说的一样，Python中也同样是模拟这个过程。首先在第一部分中建立了一个从我的程序出发到服务器端终止的套接字，并打开了连接，之后只要项服务器发送GET指令（属于http协议的一部分），并把返回的文档存储下来就行了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">mysocket.send(&apos;GET http://www.py4inf.com/code/romeo.txt HTTP/1.0\n\n&apos;)</div><div class="line"></div><div class="line">while True:</div><div class="line">    data = mysocket.recv(512)</div><div class="line">    if(len(data) &lt; 1):</div><div class="line">        break</div><div class="line">    print data</div><div class="line">mysocket.close()</div></pre></td></tr></table></figure></p>
+<p>这看起来很短，但是已经实现了一个简单的浏览器的功能。服务器会首先返回一个http地header，然后把你需要地文档发送给你。如果你想更加简单地完成这个工作，你可以使用urllib这个库。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">import urllib</div><div class="line">fhand = urllib.urlopen(&apos;http://www.py4inf.com/code/romeo.txt&apos;)</div><div class="line"></div><div class="line">for line in fhand:</div><div class="line">    print line.strip()</div></pre></td></tr></table></figure></p>
+<p>这样更简单，库帮你搞定了一切。需要注意的是这里它会把http的header自动省略掉，只会返回给你一个你请求的文档。</p>
+
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/02/Time-series-analysis/" itemprop="url">
-                  时间序列预测
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-12-02T19:29:06+08:00" content="2016-12-02">
-              2016-12-02
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Chaos/" itemprop="url" rel="index">
-                    <span itemprop="name">Chaos</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/Python/" rel="tag">#Python</a>
           
-
-          
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/Network/" rel="tag">#Network</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <a id="more"></a>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/12/02/Time-series-analysis/" rel="next" title="时间序列预测">
+                <i class="fa fa-chevron-left"></i> 时间序列预测
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/11/29/hello-world/" itemprop="url">
-                  Markdown语言的一些测试
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-11-29T17:26:54+08:00" content="2016-11-29">
-              2016-11-29
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Testing/" itemprop="url" rel="index">
-                    <span itemprop="name">Testing</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>这篇博客是第一次使用markdown来写，所以主要是进行一些markdown标记语言相关的介绍。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/11/29/hello-world/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -561,6 +364,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -580,8 +387,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -631,6 +447,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -727,6 +554,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
