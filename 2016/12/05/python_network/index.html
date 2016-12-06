@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python,Network," />
+  <meta name="keywords" content="Python,Network,Scrapy," />
 
 
 
@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/12/05/python_network/index.html">
 <meta property="og:site_name" content="Boolean's Blog">
 <meta property="og:description" content="主要是一些关于python接入网络的一些学习笔记。">
-<meta property="og:updated_time" content="2016-12-06T02:16:42.537Z">
+<meta property="og:updated_time" content="2016-12-06T14:17:03.267Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python网络内容">
 <meta name="twitter:description" content="主要是一些关于python接入网络的一些学习笔记。">
@@ -302,6 +302,8 @@
 <p>##Python怎么办<br>和上边说的一样，Python中也同样是模拟这个过程。首先在第一部分中建立了一个从我的程序出发到服务器端终止的套接字，并打开了连接，之后只要项服务器发送GET指令（属于http协议的一部分），并把返回的文档存储下来就行了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">mysocket.send(&apos;GET http://www.py4inf.com/code/romeo.txt HTTP/1.0\n\n&apos;)</div><div class="line"></div><div class="line">while True:</div><div class="line">    data = mysocket.recv(512)</div><div class="line">    if(len(data) &lt; 1):</div><div class="line">        break</div><div class="line">    print data</div><div class="line">mysocket.close()</div></pre></td></tr></table></figure></p>
 <p>这看起来很短，但是已经实现了一个简单的浏览器的功能。服务器会首先返回一个http地header，然后把你需要地文档发送给你。如果你想更加简单地完成这个工作，你可以使用urllib这个库。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">import urllib</div><div class="line">fhand = urllib.urlopen(&apos;http://www.py4inf.com/code/romeo.txt&apos;)</div><div class="line"></div><div class="line">for line in fhand:</div><div class="line">    print line.strip()</div></pre></td></tr></table></figure></p>
 <p>这样更简单，库帮你搞定了一切。需要注意的是这里它会把http的header自动省略掉，只会返回给你一个你请求的文档。</p>
+<p>#HTML解析<br>HTML解析在python中有已经做好的库来解决，那就是BeautifulSoup。通过BeautifulSoup可以将HTML文档转换称为一个复杂的树形结构，每个节点都是Python的对象，所有的对象大概可以分为4类：分别是Tag，NavigableString，BeautifulSoup，Comment。一个简单的例子就是下面这个，将你url变量中的地址对应网页所含的所有链接全部提取出来并打印。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import urllib</div><div class="line">from bs4 import BeautifulSoup</div><div class="line">url = &apos;http://www.baidu.com&apos;</div><div class="line">html = urllib.urlopen(url).read()</div><div class="line">soup = BeautifulSoup(html, &quot;html.parser&quot;)</div><div class="line">tags = soup(&apos;a&apos;)</div><div class="line">for tag in tags:</div><div class="line">    print tag.get(&apos;href&apos;, None)</div></pre></td></tr></table></figure></p>
+<p>具体来说就是将网页对应的HTML文档中所有的&lt;a&gt;标签提取出来，然后找出标签里面href后边跟着的链接地址。这样就基本是一个短小的抓取工具了。</p>
 
       
     </div>
@@ -326,6 +328,8 @@
             <a href="/tags/Python/" rel="tag">#Python</a>
           
             <a href="/tags/Network/" rel="tag">#Network</a>
+          
+            <a href="/tags/Scrapy/" rel="tag">#Scrapy</a>
           
         </div>
       
@@ -425,7 +429,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
