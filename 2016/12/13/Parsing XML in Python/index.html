@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Testing,Markdown," />
+  <meta name="keywords" content="Python,XML," />
 
 
 
@@ -84,18 +84,16 @@
 
 
 
-<meta name="description" content="这篇博客是第一次使用markdown来写，所以主要是进行一些markdown标记语言相关的介绍。">
+<meta name="description" content="Python中提供了一个可以用来划分XML文件的包，通过它可以很方便的将网络上的xml文档进行划分，从中提取出自己需要的信息。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown语言的一些测试">
-<meta property="og:url" content="http://yoursite.com/2016/11/29/hello-world/index.html">
+<meta property="og:title" content="Parsing XML in Python">
+<meta property="og:url" content="http://yoursite.com/2016/12/13/Parsing XML in Python/index.html">
 <meta property="og:site_name" content="Boolean's Blog">
-<meta property="og:description" content="这篇博客是第一次使用markdown来写，所以主要是进行一些markdown标记语言相关的介绍。">
-<meta property="og:image" content="http://images.17173.com/2014/news/2014/11/02/cb1102sm18s.jpg">
-<meta property="og:updated_time" content="2016-12-02T11:20:36.305Z">
+<meta property="og:description" content="Python中提供了一个可以用来划分XML文件的包，通过它可以很方便的将网络上的xml文档进行划分，从中提取出自己需要的信息。">
+<meta property="og:updated_time" content="2016-12-13T07:45:59.978Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Markdown语言的一些测试">
-<meta name="twitter:description" content="这篇博客是第一次使用markdown来写，所以主要是进行一些markdown标记语言相关的介绍。">
-<meta name="twitter:image" content="http://images.17173.com/2014/news/2014/11/02/cb1102sm18s.jpg">
+<meta name="twitter:title" content="Parsing XML in Python">
+<meta name="twitter:description" content="Python中提供了一个可以用来划分XML文件的包，通过它可以很方便的将网络上的xml文档进行划分，从中提取出自己需要的信息。">
 
 
 
@@ -113,7 +111,7 @@
   };
 </script>
 
-  <title> Markdown语言的一些测试 | Boolean's Blog </title>
+  <title> Parsing XML in Python | Boolean's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -233,7 +231,7 @@
             
             
               
-                Markdown语言的一些测试
+                Parsing XML in Python
               
             
           </h1>
@@ -245,8 +243,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-11-29T17:26:54+08:00" content="2016-11-29">
-              2016-11-29
+            <time itemprop="dateCreated" datetime="2016-12-13T15:04:15+08:00" content="2016-12-13">
+              2016-12-13
             </time>
           </span>
 
@@ -259,8 +257,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Testing/" itemprop="url" rel="index">
-                    <span itemprop="name">Testing</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -292,65 +290,20 @@
       
 
       
-        <p>这篇博客是第一次使用markdown来写，所以主要是进行一些markdown标记语言相关的介绍。<br><a id="more"></a></p>
-<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p>markdown中，如果一段文字被定义为标题的话，只需要在这段文字之前加“#”就行了，井号的个数表明标题的等级。比如说下面这个</p>
-<h2 id="这里是二级标题"><a href="#这里是二级标题" class="headerlink" title="这里是二级标题"></a>这里是二级标题</h2><h3 id="这里是三级标题"><a href="#这里是三级标题" class="headerlink" title="这里是三级标题"></a>这里是三级标题</h3><h4 id="这里是四级标题"><a href="#这里是四级标题" class="headerlink" title="这里是四级标题"></a>这里是四级标题</h4><p>总共有6级标题，一般来说建议在井号后边加一个空格，这样方便自己看。</p>
-<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><p>列表分为有序列表和无序列表，有序列表意味着前面有1.2.3.之类的标记，而无序列表则只有一个圆点。</p>
-<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>无序列表只要在文字前面加上“-”或者“*”就行，注意和文字之间要有空格。</p>
-<pre><code>- 123
-- 123
-- 123
-
-* 123
-* 123
-* 123
-</code></pre><h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>有序列表需要在文字前面加“1.”“2.”“3.”之类的符号，注意空格。</p>
-<pre><code>1. 123
-2. 123
-3. 123
-</code></pre><h1 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h1><p>使用两个星号包起来的文本为粗体，例如“<strong>Hello</strong>”。<br>使用一个星号包起来的文本为斜体，例如“<em>Hello</em>”。</p>
-<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>当需要引用一小段别处的句子的时候，可以使用引用的格式。只需要在文本前面加入大于号就行“&gt;”。</p>
-<blockquote>
-<p>这里是引用</p>
-</blockquote>
-<p>还有一种引用方式，使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% cq %&#125;bla bla bla&#123;% endcq %&#125;</div></pre></td></tr></table></figure></p>
-<blockquote class="blockquote-center"><p>这里也是引用</p>
-</blockquote>
-<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p>插入链接需要将超链接的文本用中括号括起来，并紧随在后要用小括号将目标链接的地址括起来。<br>举个栗子：<br><a href="https://www.google.com" target="_blank" rel="external">Google</a></p>
-<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p>插入图片的方法和插入链接的方法差不多，唯一的区别是在文本的中括号之前加一个叹号“！”。但是同样的图片需要图床，或者是本地相同文件夹下的相对路径。<br><img src="http://images.17173.com/2014/news/2014/11/02/cb1102sm18s.jpg" alt="mew"><br>(盗图，侵删)</p>
-<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><p>表格比较坑爹，需要使用“|”和“-”来“画”。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">dog | bird | cat</div><div class="line">----|------|----</div><div class="line">foo | foo  | foo</div><div class="line">bar | bar  | bar</div><div class="line">baz | baz  | baz</div></pre></td></tr></table></figure></p>
-<p>这个表格就是上面的代码画出来的：</p>
-<table>
-<thead>
-<tr>
-<th>dog</th>
-<th>bird</th>
-<th>cat</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>foo</td>
-<td>foo</td>
-<td>foo</td>
-</tr>
-<tr>
-<td>bar</td>
-<td>bar</td>
-<td>bar</td>
-</tr>
-<tr>
-<td>baz</td>
-<td>baz</td>
-<td>baz</td>
-</tr>
-</tbody>
-</table>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>从别人的博客哪里看来说是可以用两个顿号将代码包起来就行了，效果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import re </div><div class="line">print sum([int(i) for i in re.findall(&apos;[0-9]+&apos;,open(&apos;regex_sum_305923.txt&apos;).read())])</div></pre></td></tr></table></figure></p>
-<p>但是可能会因为你用到单个顿号这个符号而导致出现一些排版问题，所以建议使用三个来包含代码，如果用两个的话会没有换行。在代码当中，使用tab键可以实现缩进。</p>
-<h1 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h1><p>分割线需要另起一行，然后连着输入三个星号。<br>像这样：</p>
-<hr>
-<p>然后……嗯，然后没了。</p>
+        <p>Python中提供了一个可以用来划分XML文件的包，通过它可以很方便的将网络上的xml文档进行划分，从中提取出自己需要的信息。<br><a id="more"></a></p>
+<p>#XML<br>XML文件是一种通过标签来构建数据的标记方式。通过不同的标签将一个数据划分为不同的树状结构，是一种简洁明了的存储方式。下面是一段简单的XML文档。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;person&gt;</div><div class="line">    &lt;name&gt;Boolean&lt;/name&gt;</div><div class="line">    &lt;phone type=&quot;intl&quot;&gt;</div><div class="line">        +1 234 567 8910</div><div class="line">    &lt;/phone&gt;</div><div class="line">    &lt;email hide=&quot;yes&quot;/&gt;</div><div class="line">&lt;person&gt;</div></pre></td></tr></table></figure></p>
+<p>这里面的东西大概可以分为五种。第一种比如<name>叫做Start Tag，他表示一个标签的开始，第二种是在标签的尖括号之后加一个slash，就表示这是一个End Tag，是和前面标签名相同的Start Tag对应的，两者相互闭合，中间夹着的内容就是一个标签的Text Content，也就是第三种东西。第四种是紧跟在起始标签名后边的这些type=“intl”就被称为Attribute，是指这一个标签的Text满足的属性。第五种比较特殊，是例子里面的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;email hide=&quot;yes&quot;/&gt;</div></pre></td></tr></table></figure></name></p>
+<p>叫做Self Closing Tag，这种情况一般用于元素没有内容的情况，写成自闭合标签的形式是一种简写。</p>
+<p>#XML Schema<br>XML Schema是用来判断一个XML文档是否合法的东西。在传输过程或者其他的情况下，接收到的XML文件可能会损坏，导致程序无法运行。这个时候可以通过XML Schema和接受到的XML文档进行比较，验证它是否损坏。<br>下面的这个XML Schema就是第一部分中XML例子的模式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;xs:complexType name=&quot;person&quot;&gt;</div><div class="line">    &lt;xs:sequence&gt;</div><div class="line">        &lt;xs:element name=&quot;name&quot;/&gt;</div><div class="line">        &lt;xs:element name=&quot;phone&quot; type=&quot;xs:string&quot;/&gt;</div><div class="line">        &lt;xs:element name=&quot;email&quot;/&gt;</div><div class="line">    &lt;/xs:sequence&gt;</div><div class="line">&lt;/xs:complexType&gt;</div></pre></td></tr></table></figure></p>
+<p>另外在XML Schema中还有可以规定最大最小出现次数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;10&quot;/&gt;</div></pre></td></tr></table></figure></p>
+<p>表示name这个标签最少出现0次，最大出现10次，否则不合法。</p>
+<p>还有一种穷举的方法叫enumeration：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;xs:element name=&quot;Country&quot;&gt;</div><div class="line">    &lt;xs:simpleType&gt;</div><div class="line">        &lt;xs:restriction base=&quot;xs:string&quot;&gt;</div><div class="line">            &lt;xs:enumeration value=&quot;AA&quot; /&gt;</div><div class="line">            &lt;xs:enumeration value=&quot;BB&quot; /&gt;</div><div class="line">            &lt;xs:enumeration value=&quot;CC&quot; /&gt;</div><div class="line">            &lt;xs:enumeration value=&quot;DD&quot; /&gt;</div><div class="line">        &lt;/xs:restriction&gt;</div><div class="line">    &lt;/xs:simpleType&gt;</div><div class="line">&lt;/xs:element&gt;</div></pre></td></tr></table></figure></p>
+<p>这样就表示这下边穷举的AA，BB，CC，DD就是所有的Country了。</p>
+<p>#Python的xml.etree.ElementTree库<br>Python中提供了一个xml.etree.ElementTree库用来解析XML文档。正如其名字所说，它将XML文档所包含的数据转化成为一个元素树的形式。引用的方式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import xml.etree.ElementTree as ET</div></pre></td></tr></table></figure></p>
+<p>这样就可以通过ET来调用其内部的函数了，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tree = ET.fromstring(data)</div></pre></td></tr></table></figure></p>
+<p>其中data为XML文档内容，tree为解析出来的元素树。可以通过：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print tree.find(&apos;name&apos;).text</div></pre></td></tr></table></figure></p>
+<p>来查找名称为name的tag，并把标签的Text Content打印出来。或者可以使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print tree.find(&apos;email&apos;).get(&apos;hide&apos;)</div></pre></td></tr></table></figure></p>
+<p>来访问email这个tag的名叫hide的属性。<br>通过这些方法，可以方便袋额访问XML文档并进行处理。</p>
 
       
     </div>
@@ -372,9 +325,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Testing/" rel="tag">#Testing</a>
+            <a href="/tags/Python/" rel="tag">#Python</a>
           
-            <a href="/tags/Markdown/" rel="tag">#Markdown</a>
+            <a href="/tags/XML/" rel="tag">#XML</a>
           
         </div>
       
@@ -383,13 +336,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/12/05/python_network/" rel="next" title="python网络内容">
+                <i class="fa fa-chevron-left"></i> python网络内容
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/02/Time-series-analysis/" rel="prev" title="时间序列预测">
-                时间序列预测 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -503,7 +456,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#标题"><span class="nav-number">1.</span> <span class="nav-text">标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#这里是二级标题"><span class="nav-number">1.1.</span> <span class="nav-text">这里是二级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#这里是三级标题"><span class="nav-number">1.1.1.</span> <span class="nav-text">这里是三级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#这里是四级标题"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">这里是四级标题</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#列表"><span class="nav-number">2.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#无序列表"><span class="nav-number">2.1.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有序列表"><span class="nav-number">2.2.</span> <span class="nav-text">有序列表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#粗体和斜体"><span class="nav-number">3.</span> <span class="nav-text">粗体和斜体</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引用"><span class="nav-number">4.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链接"><span class="nav-number">5.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片"><span class="nav-number">6.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表格"><span class="nav-number">7.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">8.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分割线"><span class="nav-number">9.</span> <span class="nav-text">分割线</span></a></li></ol></div>
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
             
           </div>
         </section>
