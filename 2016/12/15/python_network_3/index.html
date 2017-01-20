@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Chaos," />
+  <meta name="keywords" content="Python,json,API," />
 
 
 
@@ -84,13 +84,16 @@
 
 
 
+<meta name="description" content="json的全称是JavaScript Object Notation，是除了XML之外的另一种常用的序列化格式。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="时间序列预测">
-<meta property="og:url" content="http://yoursite.com/2016/12/02/Time-series-analysis/index.html">
+<meta property="og:title" content="Python network（3）">
+<meta property="og:url" content="http://yoursite.com/2016/12/15/python_network_3/index.html">
 <meta property="og:site_name" content="Boolean's Blog">
-<meta property="og:updated_time" content="2016-12-02T13:24:11.395Z">
+<meta property="og:description" content="json的全称是JavaScript Object Notation，是除了XML之外的另一种常用的序列化格式。">
+<meta property="og:updated_time" content="2016-12-19T09:14:35.782Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="时间序列预测">
+<meta name="twitter:title" content="Python network（3）">
+<meta name="twitter:description" content="json的全称是JavaScript Object Notation，是除了XML之外的另一种常用的序列化格式。">
 
 
 
@@ -108,7 +111,7 @@
   };
 </script>
 
-  <title> 时间序列预测 | Boolean's Blog </title>
+  <title> Python network（3） | Boolean's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -228,7 +231,7 @@
             
             
               
-                时间序列预测
+                Python network（3）
               
             
           </h1>
@@ -240,8 +243,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-12-02T19:29:06+08:00" content="2016-12-02">
-              2016-12-02
+            <time itemprop="dateCreated" datetime="2016-12-15T14:50:05+08:00" content="2016-12-15">
+              2016-12-15
             </time>
           </span>
 
@@ -254,8 +257,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Chaos/" itemprop="url" rel="index">
-                    <span itemprop="name">Chaos</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -287,7 +290,17 @@
       
 
       
-        <a id="more"></a>
+        <p>json的全称是JavaScript Object Notation，是除了XML之外的另一种常用的序列化格式。<br><a id="more"></a></p>
+<p>#关于json</p>
+<p>##json简介<br>json是一种语法极其类似于python的序列化格式，他将数据看作是列表或者字典的方式。下面是一个例子一：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&quot;name&quot;:&quot;Boolean&quot;,</div><div class="line">&quot;phone&quot;:&#123;</div><div class="line">    &quot;type&quot;:&quot;intl&quot;,</div><div class="line">    &quot;number&quot;:&quot;+1 234 567 8910&quot;</div><div class="line">&#125;,</div><div class="line">&quot;email&quot;:&#123;</div><div class="line">    &quot;hide&quot;:&quot;yes&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在这里json的内容是由键值对组成的，通过逗号来分割不同的键值对，键值对的值可以是另外的若干个键值对，类似于字典。<br>下面是例子二：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">&#123;</div><div class="line">    &quot;id&quot;:&quot;001&quot;</div><div class="line">    &quot;x&quot;:&quot;7&quot;</div><div class="line">    &quot;name&quot;:&quot;Boolean&quot;</div><div class="line">&#125;</div><div class="line">&#123;</div><div class="line">    &quot;id&quot;:&quot;002&quot;</div><div class="line">    &quot;x&quot;:&quot;2&quot;</div><div class="line">    &quot;name&quot;:&quot;Crisis&quot;</div><div class="line">&#125;</div><div class="line">]</div></pre></td></tr></table></figure></p>
+<p>在这个例子中json将数据表现为列表的形式，列表的内容是不同的键值对。</p>
+<p>##Python中的json库<br>通过：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import json</div></pre></td></tr></table></figure></p>
+<p>可以调用Python中的json库，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">info = json.loads(data)</div><div class="line">print info[&quot;name&quot;]</div><div class="line">print info[&quot;email&quot;][&quot;hide&quot;]</div></pre></td></tr></table></figure></p>
+<p>上面的程序中data为第一部分中的json例子一，通过loads函数可以反序列化，然后通过类似于字典的访问方式就可以访问内容。上面的程序会打印出Boolean和yes。<br>对于例子二来说，通过loads函数则可以得到一个Python语法下的list。</p>
+<p>##json和XML的区别<br>可以大概分为json比XML更加容易使用，但是难以表达复杂的数据，XML更能表现丰富的东西，但是较为难以使用一些。json将数据看作是list和dictionary，而XML将数据看作是树的结构。</p>
+<p>#Service Oriented Approach<br>对于不同的应用来说，相互之间进行数据通信是不可避免的，如果然而当有第三方的应用加入到整个数据共享环节当中时，可能会由于数据格式的不同难以交互，需要将各个应用的数据拿来进行处理，这会导致非常大的工作量，面向服务的方式就应运而生。通过在不同的应用之上添加服务层，将每个应用进入服务层的数据规定好，流通在服务层中的数据格式是为大家公认的，可以有效提高效率。</p>
+
       
     </div>
 
@@ -308,7 +321,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Chaos/" rel="tag">#Chaos</a>
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+            <a href="/tags/json/" rel="tag">#json</a>
+          
+            <a href="/tags/API/" rel="tag">#API</a>
           
         </div>
       
@@ -317,17 +334,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/29/hello-world/" rel="next" title="Markdown语言的一些测试">
-                <i class="fa fa-chevron-left"></i> Markdown语言的一些测试
+              <a href="/2016/12/13/python_network_2/" rel="next" title="Python network（2）">
+                <i class="fa fa-chevron-left"></i> Python network（2）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/05/python_network/" rel="prev" title="python网络内容">
-                python网络内容 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -403,7 +416,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -412,7 +425,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -459,8 +472,8 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
