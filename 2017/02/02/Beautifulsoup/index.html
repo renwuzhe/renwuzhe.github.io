@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python,Network,Scrapy," />
+  <meta name="keywords" content="Python,BeautifulSoup," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="主要是一些关于python接入网络的一些学习笔记。">
+<meta name="description" content="rt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python network（1）">
-<meta property="og:url" content="http://yoursite.com/2016/12/05/python_network_1/index.html">
+<meta property="og:title" content="BeautifulSoup的一些函数备忘">
+<meta property="og:url" content="http://yoursite.com/2017/02/02/Beautifulsoup/index.html">
 <meta property="og:site_name" content="Boolean's Blog">
-<meta property="og:description" content="主要是一些关于python接入网络的一些学习笔记。">
-<meta property="og:updated_time" content="2016-12-15T08:30:27.147Z">
+<meta property="og:description" content="rt">
+<meta property="og:updated_time" content="2017-02-02T05:56:30.534Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python network（1）">
-<meta name="twitter:description" content="主要是一些关于python接入网络的一些学习笔记。">
+<meta name="twitter:title" content="BeautifulSoup的一些函数备忘">
+<meta name="twitter:description" content="rt">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> python network（1） | Boolean's Blog </title>
+  <title> BeautifulSoup的一些函数备忘 | Boolean's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -231,7 +231,7 @@
             
             
               
-                python network（1）
+                BeautifulSoup的一些函数备忘
               
             
           </h1>
@@ -243,8 +243,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-12-05T18:03:17+08:00" content="2016-12-05">
-              2016-12-05
+            <time itemprop="dateCreated" datetime="2017-02-02T13:47:36+08:00" content="2017-02-02">
+              2017-02-02
             </time>
           </span>
 
@@ -290,20 +290,12 @@
       
 
       
-        <p>主要是一些关于python接入网络的一些学习笔记。</p>
-<a id="more"></a>
-<p>#网络相关</p>
-<p>##套接字（socket）<br>套接字这个东西在之前的计网课上曾经学过，他可以说是一种在传输层之间连接方式的抽象。抛开更底层的链路之类，网络通信相当于两个终端分别将信息放进传输层，然后相互通信的过程。<br>对于python来说，在文件系统的文件句柄一样，可以通过文件句柄来访问文件；套接字和它类似，就像飞机的舷窗，程序通过socket可以访问到另一端的数据。</p>
-<p>##端口<br>端口这个东西是用来区分连接到同一台机器上的不同进程的功能的。比如一个服务器可以提供Web server、Login、email等等许多功能，浏览器发来连接请求，需要进行页面访问，那么就会通过服务器的80号端口访问，这个端口进来的所有请求都由Web server来处理。理论上端口号可以随便选择，比如说你在和室友玩WAR3对战的时候可以手动选择一个数字较大的空余端口作为局域网连接，但是也有一些端口是大家常用的。比如http(80)、Telnet(23)、SSH(22)、DNS(53)等等。</p>
-<p>##Python中如何实现<br>好消息是在Python中想要实现这些并不需要太复杂，因为我们有一个很好的库叫做socket。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import socket</div><div class="line">mysocket = soket.socket(socket.AF_INET, socket.SOCK_STREAM)</div><div class="line">mysocket.connect((&apos;www.py4inf.com&apos;,80))</div></pre></td></tr></table></figure></p>
-<p>这样就打开了一个socket，mysocket这个变量就像文件句柄一样，可以通过它来访问web server。</p>
-<p>#HTTP协议</p>
-<p>##原理<br>HTTP协议的标准文档很长，有两三百页，但是他的思想却很简单，就是一个个请求-响应周期的循环。首先建立连接，之后发出请求，服务器收到请求后会返回一个文档，之后关闭连接。你可以通过telnet指令模拟这个过程，欺骗服务器以为你是正常的浏览器发出的请求。同样大部分的浏览器都带有一个开发者工具，在里面可以看到一个网页在打开的过程中具体经历了什么，比如请求html文件，请求css文件等等。</p>
-<p>##Python怎么办<br>和上边说的一样，Python中也同样是模拟这个过程。首先在第一部分中建立了一个从我的程序出发到服务器端终止的套接字，并打开了连接，之后只要项服务器发送GET指令（属于http协议的一部分），并把返回的文档存储下来就行了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">mysocket.send(&apos;GET http://www.py4inf.com/code/romeo.txt HTTP/1.0\n\n&apos;)</div><div class="line"></div><div class="line">while True:</div><div class="line">    data = mysocket.recv(512)</div><div class="line">    if(len(data) &lt; 1):</div><div class="line">        break</div><div class="line">    print data</div><div class="line">mysocket.close()</div></pre></td></tr></table></figure></p>
-<p>这看起来很短，但是已经实现了一个简单的浏览器的功能。服务器会首先返回一个http地header，然后把你需要地文档发送给你。如果你想更加简单地完成这个工作，你可以使用urllib这个库。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">import urllib</div><div class="line">fhand = urllib.urlopen(&apos;http://www.py4inf.com/code/romeo.txt&apos;)</div><div class="line"></div><div class="line">for line in fhand:</div><div class="line">    print line.strip()</div></pre></td></tr></table></figure></p>
-<p>这样更简单，库帮你搞定了一切。需要注意的是这里它会把http的header自动省略掉，只会返回给你一个你请求的文档。</p>
-<p>#HTML解析<br>HTML解析在python中有已经做好的库来解决，那就是BeautifulSoup。通过BeautifulSoup可以将HTML文档转换称为一个复杂的树形结构，每个节点都是Python的对象，所有的对象大概可以分为4类：分别是Tag，NavigableString，BeautifulSoup，Comment。一个简单的例子就是下面这个，将你url变量中的地址对应网页所含的所有链接全部提取出来并打印。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import urllib</div><div class="line">from bs4 import BeautifulSoup</div><div class="line">url = &apos;http://www.baidu.com&apos;</div><div class="line">html = urllib.urlopen(url).read()</div><div class="line">soup = BeautifulSoup(html, &quot;html.parser&quot;)</div><div class="line">tags = soup(&apos;a&apos;)</div><div class="line">for tag in tags:</div><div class="line">    print tag.get(&apos;href&apos;, None)</div></pre></td></tr></table></figure></p>
-<p>具体来说就是将网页对应的HTML文档中所有的&lt;a&gt;标签提取出来，然后找出标签里面href后边跟着的链接地址。这样就基本是一个短小的抓取工具了。</p>
+        <p>rt<br><a id="more"></a></p>
+<p>#findAll和find<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">findAll(tag, attributes, recursive, text, limit, keywords)</div><div class="line">find(tag, attributes, recursive, text, keywords)</div></pre></td></tr></table></figure></p>
+<p>标签参数tag 你可以传一个标签的名称或多个标签名称组成的Python列表做标签参数。例如，下面的代码将返回一个包含HTML 文档中所有标题标签的列表：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.findAll(&#123;&quot;h1&quot;,&quot;h2&quot;,&quot;h3&quot;,&quot;h4&quot;,&quot;h5&quot;,&quot;h6&quot;&#125;)</div></pre></td></tr></table></figure></p>
+<p>属性参数attributes 是用一个Python 字典封装一个标签的若干属性和对应的属性值。例如，下面这个函数会返回HTML文档里红色与绿色两种颜色的span 标签：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.findAll(&quot;span&quot;, &#123;&quot;class&quot;:&#123;&quot;green&quot;, &quot;red&quot;&#125;&#125;)</div></pre></td></tr></table></figure></p>
+<p>递归参数recursive是一个布尔变量。你想抓取HTML文档标签结构里多少层的信息？如果recursive 设置为True，findAll就会根据你的要求去查找标签参数的所有子标签，以及子标签的子标签。如果recursive 设置为False，findAll就只查找文档的一级标签。findAll默认是支持递归查找的（recursive 默认值是True）；一般情况下这个参数不需要设置，除非你真正了解自己需要哪些信息，而且抓取速度非常重要，那时你可以设置递归参数。文本参数text 有点不同，它是用标签的文本内容去匹配，而不是用标签的属性。假如我们想查找前面网页中包含“the prince”内容的标签数量，我们可以把之前的findAll方法换成下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nameList = bsObj.findAll(text=&quot;the prince&quot;)</div><div class="line">print(len(nameList))</div></pre></td></tr></table></figure></p>
+<p>输出结果为“7”。<br>范围限制参数limit，显然只用于findAll 方法。find 其实等价于findAll 的limit等于1时的情形。如果你只对网页中获取的前x项结果感兴趣，就可以设置它。但是要注意，这个参数设置之后，获得的前几项结果是按照网页上的顺序排序的，未必是你想要的那前几项。<br>还有一个关键词参数keyword，可以让你选择那些具有指定属性的标签。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">allText = bsObj.findAll(id=&quot;text&quot;)</div><div class="line">print(allText[0].get_text())</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -327,9 +319,7 @@
           
             <a href="/tags/Python/" rel="tag">#Python</a>
           
-            <a href="/tags/Network/" rel="tag">#Network</a>
-          
-            <a href="/tags/Scrapy/" rel="tag">#Scrapy</a>
+            <a href="/tags/BeautifulSoup/" rel="tag">#BeautifulSoup</a>
           
         </div>
       
@@ -338,17 +328,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/29/markdown/" rel="next" title="Markdown语言的一些测试">
-                <i class="fa fa-chevron-left"></i> Markdown语言的一些测试
+              <a href="/2017/01/20/matlab_kmeans/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/13/python_network_2/" rel="prev" title="Python network（2）">
-                Python network（2） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
