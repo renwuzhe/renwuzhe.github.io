@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/02/02/Beautifulsoup/index.html">
 <meta property="og:site_name" content="Boolean's Blog">
 <meta property="og:description" content="rt">
-<meta property="og:updated_time" content="2017-02-02T05:56:30.534Z">
+<meta property="og:updated_time" content="2017-02-02T05:59:42.892Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BeautifulSoup的一些函数备忘">
 <meta name="twitter:description" content="rt">
@@ -291,7 +291,7 @@
 
       
         <p>rt<br><a id="more"></a></p>
-<p>#findAll和find<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">findAll(tag, attributes, recursive, text, limit, keywords)</div><div class="line">find(tag, attributes, recursive, text, keywords)</div></pre></td></tr></table></figure></p>
+<p>##findAll和find<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">findAll(tag, attributes, recursive, text, limit, keywords)</div><div class="line">find(tag, attributes, recursive, text, keywords)</div></pre></td></tr></table></figure></p>
 <p>标签参数tag 你可以传一个标签的名称或多个标签名称组成的Python列表做标签参数。例如，下面的代码将返回一个包含HTML 文档中所有标题标签的列表：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.findAll(&#123;&quot;h1&quot;,&quot;h2&quot;,&quot;h3&quot;,&quot;h4&quot;,&quot;h5&quot;,&quot;h6&quot;&#125;)</div></pre></td></tr></table></figure></p>
 <p>属性参数attributes 是用一个Python 字典封装一个标签的若干属性和对应的属性值。例如，下面这个函数会返回HTML文档里红色与绿色两种颜色的span 标签：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.findAll(&quot;span&quot;, &#123;&quot;class&quot;:&#123;&quot;green&quot;, &quot;red&quot;&#125;&#125;)</div></pre></td></tr></table></figure></p>
 <p>递归参数recursive是一个布尔变量。你想抓取HTML文档标签结构里多少层的信息？如果recursive 设置为True，findAll就会根据你的要求去查找标签参数的所有子标签，以及子标签的子标签。如果recursive 设置为False，findAll就只查找文档的一级标签。findAll默认是支持递归查找的（recursive 默认值是True）；一般情况下这个参数不需要设置，除非你真正了解自己需要哪些信息，而且抓取速度非常重要，那时你可以设置递归参数。文本参数text 有点不同，它是用标签的文本内容去匹配，而不是用标签的属性。假如我们想查找前面网页中包含“the prince”内容的标签数量，我们可以把之前的findAll方法换成下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nameList = bsObj.findAll(text=&quot;the prince&quot;)</div><div class="line">print(len(nameList))</div></pre></td></tr></table></figure></p>
@@ -328,8 +328,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/20/matlab_kmeans/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2016/12/15/python_network_3/" rel="next" title="Python network（3）">
+                <i class="fa fa-chevron-left"></i> Python network（3）
               </a>
             
           </div>
@@ -402,7 +402,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
