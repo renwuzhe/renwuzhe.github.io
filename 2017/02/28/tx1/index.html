@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python,Network,Scrapy," />
+  <meta name="keywords" content="SLAM,TX1," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="主要是一些关于python接入网络的一些学习笔记。">
+<meta name="description" content="之前购买的Nvidia的Jetson TX1今天刚刚到了，因此准备花一些时间来搭建一下工作环境，于是就边做边写，把遇到的一些问题记录下来。标题什么的大概是会瞎标一标，不要太在意。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python network（1）">
-<meta property="og:url" content="http://yoursite.com/2016/12/05/python_network_1/index.html">
+<meta property="og:title" content="Jetson TX1的配置心得">
+<meta property="og:url" content="http://yoursite.com/2017/02/28/tx1/index.html">
 <meta property="og:site_name" content="Boolean's Blog">
-<meta property="og:description" content="主要是一些关于python接入网络的一些学习笔记。">
-<meta property="og:updated_time" content="2016-12-15T08:30:27.147Z">
+<meta property="og:description" content="之前购买的Nvidia的Jetson TX1今天刚刚到了，因此准备花一些时间来搭建一下工作环境，于是就边做边写，把遇到的一些问题记录下来。标题什么的大概是会瞎标一标，不要太在意。">
+<meta property="og:updated_time" content="2017-04-25T02:41:27.520Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python network（1）">
-<meta name="twitter:description" content="主要是一些关于python接入网络的一些学习笔记。">
+<meta name="twitter:title" content="Jetson TX1的配置心得">
+<meta name="twitter:description" content="之前购买的Nvidia的Jetson TX1今天刚刚到了，因此准备花一些时间来搭建一下工作环境，于是就边做边写，把遇到的一些问题记录下来。标题什么的大概是会瞎标一标，不要太在意。">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> python network（1） | Boolean's Blog </title>
+  <title> Jetson TX1的配置心得 | Boolean's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -231,7 +231,7 @@
             
             
               
-                python network（1）
+                Jetson TX1的配置心得
               
             
           </h1>
@@ -243,8 +243,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-12-05T18:03:17+08:00" content="2016-12-05">
-              2016-12-05
+            <time itemprop="dateCreated" datetime="2017-02-28T16:28:53+08:00" content="2017-02-28">
+              2017-02-28
             </time>
           </span>
 
@@ -257,8 +257,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/SLAM/" itemprop="url" rel="index">
+                    <span itemprop="name">SLAM</span>
                   </a>
                 </span>
 
@@ -290,20 +290,23 @@
       
 
       
-        <p>主要是一些关于python接入网络的一些学习笔记。</p>
-<a id="more"></a>
-<p>#网络相关</p>
-<p>##套接字（socket）<br>套接字这个东西在之前的计网课上曾经学过，他可以说是一种在传输层之间连接方式的抽象。抛开更底层的链路之类，网络通信相当于两个终端分别将信息放进传输层，然后相互通信的过程。<br>对于python来说，在文件系统的文件句柄一样，可以通过文件句柄来访问文件；套接字和它类似，就像飞机的舷窗，程序通过socket可以访问到另一端的数据。</p>
-<p>##端口<br>端口这个东西是用来区分连接到同一台机器上的不同进程的功能的。比如一个服务器可以提供Web server、Login、email等等许多功能，浏览器发来连接请求，需要进行页面访问，那么就会通过服务器的80号端口访问，这个端口进来的所有请求都由Web server来处理。理论上端口号可以随便选择，比如说你在和室友玩WAR3对战的时候可以手动选择一个数字较大的空余端口作为局域网连接，但是也有一些端口是大家常用的。比如http(80)、Telnet(23)、SSH(22)、DNS(53)等等。</p>
-<p>##Python中如何实现<br>好消息是在Python中想要实现这些并不需要太复杂，因为我们有一个很好的库叫做socket。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import socket</div><div class="line">mysocket = soket.socket(socket.AF_INET, socket.SOCK_STREAM)</div><div class="line">mysocket.connect((&apos;www.py4inf.com&apos;,80))</div></pre></td></tr></table></figure></p>
-<p>这样就打开了一个socket，mysocket这个变量就像文件句柄一样，可以通过它来访问web server。</p>
-<p>#HTTP协议</p>
-<p>##原理<br>HTTP协议的标准文档很长，有两三百页，但是他的思想却很简单，就是一个个请求-响应周期的循环。首先建立连接，之后发出请求，服务器收到请求后会返回一个文档，之后关闭连接。你可以通过telnet指令模拟这个过程，欺骗服务器以为你是正常的浏览器发出的请求。同样大部分的浏览器都带有一个开发者工具，在里面可以看到一个网页在打开的过程中具体经历了什么，比如请求html文件，请求css文件等等。</p>
-<p>##Python怎么办<br>和上边说的一样，Python中也同样是模拟这个过程。首先在第一部分中建立了一个从我的程序出发到服务器端终止的套接字，并打开了连接，之后只要项服务器发送GET指令（属于http协议的一部分），并把返回的文档存储下来就行了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">mysocket.send(&apos;GET http://www.py4inf.com/code/romeo.txt HTTP/1.0\n\n&apos;)</div><div class="line"></div><div class="line">while True:</div><div class="line">    data = mysocket.recv(512)</div><div class="line">    if(len(data) &lt; 1):</div><div class="line">        break</div><div class="line">    print data</div><div class="line">mysocket.close()</div></pre></td></tr></table></figure></p>
-<p>这看起来很短，但是已经实现了一个简单的浏览器的功能。服务器会首先返回一个http地header，然后把你需要地文档发送给你。如果你想更加简单地完成这个工作，你可以使用urllib这个库。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">import urllib</div><div class="line">fhand = urllib.urlopen(&apos;http://www.py4inf.com/code/romeo.txt&apos;)</div><div class="line"></div><div class="line">for line in fhand:</div><div class="line">    print line.strip()</div></pre></td></tr></table></figure></p>
-<p>这样更简单，库帮你搞定了一切。需要注意的是这里它会把http的header自动省略掉，只会返回给你一个你请求的文档。</p>
-<p>#HTML解析<br>HTML解析在python中有已经做好的库来解决，那就是BeautifulSoup。通过BeautifulSoup可以将HTML文档转换称为一个复杂的树形结构，每个节点都是Python的对象，所有的对象大概可以分为4类：分别是Tag，NavigableString，BeautifulSoup，Comment。一个简单的例子就是下面这个，将你url变量中的地址对应网页所含的所有链接全部提取出来并打印。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import urllib</div><div class="line">from bs4 import BeautifulSoup</div><div class="line">url = &apos;http://www.baidu.com&apos;</div><div class="line">html = urllib.urlopen(url).read()</div><div class="line">soup = BeautifulSoup(html, &quot;html.parser&quot;)</div><div class="line">tags = soup(&apos;a&apos;)</div><div class="line">for tag in tags:</div><div class="line">    print tag.get(&apos;href&apos;, None)</div></pre></td></tr></table></figure></p>
-<p>具体来说就是将网页对应的HTML文档中所有的&lt;a&gt;标签提取出来，然后找出标签里面href后边跟着的链接地址。这样就基本是一个短小的抓取工具了。</p>
+        <p>之前购买的Nvidia的Jetson TX1今天刚刚到了，因此准备花一些时间来搭建一下工作环境，于是就边做边写，把遇到的一些问题记录下来。标题什么的大概是会瞎标一标，不要太在意。<br><a id="more"></a></p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="硬件准备"><a href="#硬件准备" class="headerlink" title="硬件准备"></a>硬件准备</h2><p>拿到手之后上来先去网上搜索了一下配置的方法，看了好几篇博客。大概总结了一下，这个安装过程需要一台其他的主机，通过在主机上运行安装程序的方式将操作系统写进TX1这块开发板里面。至于这台主机，好几个Blog里面都提到要使用一台装有<strong>Ubuntu 14.04 64</strong>的主机，如果版本不同（比如16.04之类）是否会发生问题，那就不得而知了。正好手边有一台师兄的装了64位Ubuntu 14.04的台式机，就拿他来作为Host了。<br>有了主机之后需要接线，将TX1板子上的USB Micro-B连接到主机，另外一个USB 3.0的口子通过hub扩展出来接鼠标键盘，然后HDMI接显示屏，网口接上网线，电源接电源线。</p>
+<h2 id="软件准备"><a href="#软件准备" class="headerlink" title="软件准备"></a>软件准备</h2><p>准备好主机之后需要下载Nvidia提供的定制版ubuntu，这些可以单独下载，但更好的方式是下载已经打包好的一个工具集JetPack for L4T 。<br>我是在官网的Embedded Download Center里面搜索JetPack找到的，下载了版本号为2.3.1的工具集，大概33MB左右。<br><a href="https://developer.nvidia.com/embedded/downloads" target="_blank" rel="external">Embedded Download Center</a></p>
+<h1 id="正式开始"><a href="#正式开始" class="headerlink" title="正式开始"></a>正式开始</h1><p>我把下载好的JetPack for L4T(JetPack-L4T-2.3.1-linux-x64.run)放到了home目录下，这样我的终端可以直接找到他。打开terminal，先添加运行权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod +777 JetPack-L4T-2.3.1-linux-x64.run</div></pre></td></tr></table></figure></p>
+<p>然后运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ./JetPack-L4T-2.3.1-linux-x64.run</div></pre></td></tr></table></figure></p>
+<p>出现了安装的图形界面，一路next之后注意选择自己的板子是TX1。之后会弹出一个<em>JetPack Component Manager</em>的窗口，这时候我才发现一个问题。我想装32位的ubuntu 14.04然后配ROS indigo，结果2.3版本的JetPack只有64位的16.04。这时候选择左上角的版本选到2.2版本，之后在它左边选择32位的版本，安装类型我选择了<em>full</em>，最后点击右下角的<em>next</em>开始下载。</p>
+<p>然后你大概要等一天……反正我今天肯定下不完（有点儿后悔选<em>full</em>了呢）</p>
+<hr>
+<p>好久之后才来继续更新。<br>下载完成之后程序会提醒你接下来的安装需要人在旁边照看，点击确定，然后一路下一步。之后会出现选择tx1板和电脑的连接方式，有两种可以选择，一种是tx1和host pc都连接在一个路由器上；另一种是tx1通过网线连接在host pc上，而host pc通过另外一块网卡连接到Internet。我因为没有路由器，选择了后一种，笔记本用无线连外网，有线接tx1。选择好之后会要求你选择分别是使用哪一块网卡连接的什么，我的选择是<strong>wlan0</strong>连接外网，<strong>eth0</strong>连接tx1板子。选择好之后选择下一步，程序会弹出一个terminal拷贝nvidia定制的ubuntu系统，拷贝完成后会弹出提示，将tx1设置成为usb恢复模式：</p>
+<ul>
+<li>关闭tx1，拔掉电源，等待电源红色灯光熄灭</li>
+<li>用自带的Micro USB转USB数据线连接主机与TX1</li>
+<li>连接电源适配器</li>
+<li>按下并释放power键</li>
+<li>按住<code>FORCE RECOVERY</code>键不松开，同时按下并释放<code>RESET</code>键，等待两秒，松开<code>FORCE RECOVERY</code>键<br>之后就等待程序自动安装就行了，在安装过程中要求保证主机的网络一直通畅，否则会出现安装失败的问题。我尝试了好几次，每次都在安装cuda的时候失败，经过检查错误记录，发现每次在程序自动运行<code>apt-get update</code>的时候都会卡住，最后忍不住了用手机流量开了一个wifi提供给主机，才完成了整个安装。</li>
+</ul>
+<p>这样，整个安装配置过程就完成了！</p>
 
       
     </div>
@@ -325,11 +328,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag">#Python</a>
+            <a href="/tags/SLAM/" rel="tag">#SLAM</a>
           
-            <a href="/tags/Network/" rel="tag">#Network</a>
-          
-            <a href="/tags/Scrapy/" rel="tag">#Scrapy</a>
+            <a href="/tags/TX1/" rel="tag">#TX1</a>
           
         </div>
       
@@ -338,17 +339,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/29/markdown/" rel="next" title="Markdown语言的一些测试">
-                <i class="fa fa-chevron-left"></i> Markdown语言的一些测试
+              <a href="/2017/02/02/Beautifulsoup/" rel="next" title="BeautifulSoup的一些函数备忘">
+                <i class="fa fa-chevron-left"></i> BeautifulSoup的一些函数备忘
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/13/python_network_2/" rel="prev" title="Python network（2）">
-                Python network（2） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -462,7 +459,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#硬件准备"><span class="nav-number">1.1.</span> <span class="nav-text">硬件准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件准备"><span class="nav-number">1.2.</span> <span class="nav-text">软件准备</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正式开始"><span class="nav-number">2.</span> <span class="nav-text">正式开始</span></a></li></ol></div>
             
           </div>
         </section>
