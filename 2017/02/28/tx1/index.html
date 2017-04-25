@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/02/28/tx1/index.html">
 <meta property="og:site_name" content="Boolean's Blog">
 <meta property="og:description" content="之前购买的Nvidia的Jetson TX1今天刚刚到了，因此准备花一些时间来搭建一下工作环境，于是就边做边写，把遇到的一些问题记录下来。标题什么的大概是会瞎标一标，不要太在意。">
-<meta property="og:updated_time" content="2017-04-25T02:41:27.520Z">
+<meta property="og:updated_time" content="2017-04-25T02:43:51.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jetson TX1的配置心得">
 <meta name="twitter:description" content="之前购买的Nvidia的Jetson TX1今天刚刚到了，因此准备花一些时间来搭建一下工作环境，于是就边做边写，把遇到的一些问题记录下来。标题什么的大概是会瞎标一标，不要太在意。">
@@ -304,8 +304,9 @@
 <li>用自带的Micro USB转USB数据线连接主机与TX1</li>
 <li>连接电源适配器</li>
 <li>按下并释放power键</li>
-<li>按住<code>FORCE RECOVERY</code>键不松开，同时按下并释放<code>RESET</code>键，等待两秒，松开<code>FORCE RECOVERY</code>键<br>之后就等待程序自动安装就行了，在安装过程中要求保证主机的网络一直通畅，否则会出现安装失败的问题。我尝试了好几次，每次都在安装cuda的时候失败，经过检查错误记录，发现每次在程序自动运行<code>apt-get update</code>的时候都会卡住，最后忍不住了用手机流量开了一个wifi提供给主机，才完成了整个安装。</li>
+<li>按住<code>FORCE RECOVERY</code>键不松开，同时按下并释放<code>RESET</code>键，等待两秒，松开<code>FORCE RECOVERY</code>键</li>
 </ul>
+<p>之后就等待程序自动安装就行了，在安装过程中要求保证主机的网络一直通畅，否则会出现安装失败的问题。我尝试了好几次，每次都在安装cuda的时候失败，经过检查错误记录，发现每次在程序自动运行<code>apt-get update</code>的时候都会卡住，最后忍不住了用手机流量开了一个wifi提供给主机，才完成了整个安装。</p>
 <p>这样，整个安装配置过程就完成了！</p>
 
       
