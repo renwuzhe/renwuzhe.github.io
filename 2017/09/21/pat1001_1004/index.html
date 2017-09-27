@@ -1,0 +1,609 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python,PAT," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="最近开始刷PAT，写一个系列来记录一下刷题过程中遇到的坑，做题过程中出了问题的我会简单记录一下，没出问题的我就把代码直接贴一下，主要应该是用python3实现。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PAT甲级1001-1004">
+<meta property="og:url" content="http://yoursite.com/2017/09/21/pat1001_1004/index.html">
+<meta property="og:site_name" content="Boolean's Blog">
+<meta property="og:description" content="最近开始刷PAT，写一个系列来记录一下刷题过程中遇到的坑，做题过程中出了问题的我会简单记录一下，没出问题的我就把代码直接贴一下，主要应该是用python3实现。">
+<meta property="og:updated_time" content="2017-09-27T10:46:25.806Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PAT甲级1001-1004">
+<meta name="twitter:description" content="最近开始刷PAT，写一个系列来记录一下刷题过程中遇到的坑，做题过程中出了问题的我会简单记录一下，没出问题的我就把代码直接贴一下，主要应该是用python3实现。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Boolean'
+    }
+  };
+</script>
+
+  <title> PAT甲级1001-1004 | Boolean's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Boolean's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Ces't la vie</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PAT甲级1001-1004
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-09-21T09:38:46+08:00" content="2017-09-21">
+              2017-09-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PAT/" itemprop="url" rel="index">
+                    <span itemprop="name">PAT</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近开始刷PAT，写一个系列来记录一下刷题过程中遇到的坑，做题过程中出了问题的我会简单记录一下，没出问题的我就把代码直接贴一下，主要应该是用python3实现。<br><a id="more"></a></p>
+<h1 id="1001-A-B-Format-20"><a href="#1001-A-B-Format-20" class="headerlink" title="1001.A+B Format (20)"></a>1001.A+B Format (20)</h1><p>题目：Calculate a + b and output the sum in standard format – that is, the digits must be separated into groups of three by commas (unless there are less than four digits).</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>Each input file contains one test case. Each case contains a pair of integers a and b where -1000000 &lt;= a, b &lt;= 1000000. The numbers are separated by a space.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, you should output the sum of a and b in one line. The sum must be written in the standard format.</p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>-1000000 9</p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>-999,991</p>
+<p>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"># 1001</div><div class="line"># by wboolean@2017</div><div class="line">strin = input()</div><div class="line">strin = strin.split()</div><div class="line">a = int(strin[0])</div><div class="line">b = int(strin[1])</div><div class="line">c = a + b</div><div class="line">c = str(c)</div><div class="line">if c[0] == &apos;-&apos;:</div><div class="line">    negFlag = 1</div><div class="line">else:</div><div class="line">    negFlag = 0</div><div class="line">L = len(c) - negFlag</div><div class="line">result = &apos;&apos;</div><div class="line">count = 0</div><div class="line">for i in range(L):</div><div class="line">    count += 1</div><div class="line">    result = c[-i-1] + result</div><div class="line">    if count == 3:</div><div class="line">        result = &apos;,&apos; + result</div><div class="line">        count = 0</div><div class="line">if result[0] == &apos;,&apos;:</div><div class="line">    result = result[1:]</div><div class="line">if negFlag == 1:</div><div class="line">    result = &apos;-&apos; + result</div><div class="line">print(result)</div></pre></td></tr></table></figure></p>
+<h1 id="1002-A-B-for-Polynomials-25"><a href="#1002-A-B-for-Polynomials-25" class="headerlink" title="1002.A+B for Polynomials (25)"></a>1002.A+B for Polynomials (25)</h1><p>题目：This time, you are supposed to find A+B where A and B are two polynomials.</p>
+<h2 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h2><p>Each input file contains one test case. Each case occupies 2 lines, and each line contains the information of a polynomial: K N1 aN1 N2 aN2 … NK aNK, where K is the number of nonzero terms in the polynomial, Ni and aNi (i=1, 2, …, K) are the exponents and coefficients, respectively. It is given that 1 &lt;= K &lt;= 10，0 &lt;= NK &lt; … &lt; N2 &lt; N1 &lt;=1000.</p>
+<h2 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h2><p>For each test case you should output the sum of A and B in one line, with the same format as the input. Notice that there must be NO extra space at the end of each line. Please be accurate to 1 decimal place.</p>
+<h2 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>2 1 2.4 0 3.2<br>2 2 1.5 1 0.5</p>
+<h2 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>3 2 1.5 1 2.9 0 3.2</p>
+<p>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"># 1002</div><div class="line"># by wboolean@2017</div><div class="line">a = input()</div><div class="line">b = input()</div><div class="line"></div><div class="line">a = a.split()</div><div class="line">b = b.split()</div><div class="line"></div><div class="line">k1 = int(a[0])</div><div class="line">k2 = int(b[0])</div><div class="line">items = &#123;&#125;</div><div class="line">for i in range(k1):</div><div class="line">    if a[2 * i + 1] not in items.keys():</div><div class="line">        items[a[2 * i + 1]] = float(a[2 * i + 2])</div><div class="line">    else:</div><div class="line">        items[a[2 * i + 1]] += float(a[2 * i + 2])</div><div class="line">for i in range(k2):</div><div class="line">    if b[2 * i + 1] not in items.keys():</div><div class="line">        items[b[2 * i + 1]] = float(b[2 * i + 2])</div><div class="line">    else:</div><div class="line">        items[b[2 * i + 1]] += float(b[2 * i + 2])</div><div class="line">e = []</div><div class="line">for key, value in items.items():</div><div class="line">    if value != 0:</div><div class="line">        e.append(int(key))</div><div class="line">        items[key] = round(value, 1)</div><div class="line"></div><div class="line">e.sort(reverse=True)</div><div class="line">result = &apos;&apos;</div><div class="line">result += str(len(e))</div><div class="line">for i in range(len(e)):</div><div class="line">    result += &apos; &apos; + str(e[i]) + &apos; &apos; + str(items[str(e[i])])</div><div class="line"></div><div class="line"></div><div class="line">print(result)</div></pre></td></tr></table></figure></p>
+<p>这个题目有几个遇到的坑，第一个是精确到小数点后1位，第一次提交的时候忽视掉了，后来加了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">items[key] = round(value,1)</div></pre></td></tr></table></figure></p>
+<p>第二个是如果某一项两个系数相加之后等于0，那么在最后的结果中应该是不显示的。这个坑卡了好久，举个例子，输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1 0 0</div><div class="line">1 0 0</div></pre></td></tr></table></figure></p>
+<p>输出的结果应该是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0</div></pre></td></tr></table></figure></p>
+<p>而如果不判断value != 0则会输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1 0 0.0</div></pre></td></tr></table></figure></p>
+<h1 id="1003-Emergency-25"><a href="#1003-Emergency-25" class="headerlink" title="1003.Emergency (25)"></a>1003.Emergency (25)</h1><p>题目：As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the length of each road between any pair of cities are marked on the map. When there is an emergency call to you from some other city, your job is to lead your men to the place as quickly as possible, and at the mean time, call up as many hands on the way as possible.</p>
+<h2 id="Input-2"><a href="#Input-2" class="headerlink" title="Input"></a>Input</h2><p>Each input file contains one test case. For each test case, the first line contains 4 positive integers: N (&lt;= 500) - the number of cities (and the cities are numbered from 0 to N-1), M - the number of roads, C1 and C2 - the cities that you are currently in and that you must save, respectively. The next line contains N integers, where the i-th integer is the number of rescue teams in the i-th city. Then M lines follow, each describes a road with three integers c1, c2 and L, which are the pair of cities connected by a road and the length of that road, respectively. It is guaranteed that there exists at least one path from C1 to C2.</p>
+<h2 id="Output-2"><a href="#Output-2" class="headerlink" title="Output"></a>Output</h2><p>For each test case, print in one line two numbers: the number of different shortest paths between C1 and C2, and the maximum amount of rescue teams you can possibly gather.<br>All the numbers in a line must be separated by exactly one space, and there is no extra space allowed at the end of a line.</p>
+<h2 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>5 6 0 2<br>1 2 1 5 3<br>0 1 1<br>0 2 2<br>0 3 1<br>1 2 1<br>2 4 1<br>3 4 1</p>
+<h2 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>2 4</p>
+<p>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line"># 1003</div><div class="line"># by wboolean@2017</div><div class="line"></div><div class="line">line1 = input()</div><div class="line">line1 = line1.split()</div><div class="line">N = int(line1[0])</div><div class="line">M = int(line1[1])</div><div class="line">C1 = int(line1[2])</div><div class="line">C2 = int(line1[3])</div><div class="line">line2 = input()</div><div class="line">line2 = line2.split()</div><div class="line">numRescueTeam = []</div><div class="line">for i in range(N):</div><div class="line">    numRescueTeam.append(int(line2[i]))</div><div class="line"></div><div class="line">roads = []</div><div class="line">for i in range(M):</div><div class="line">    roadInput = input()</div><div class="line">    roadInput = roadInput.split()</div><div class="line">    road = [int(roadInput[0]), int(roadInput[1]), int(roadInput[2])]</div><div class="line">    roads.append(road)</div><div class="line"></div><div class="line"># print(N, &apos; &apos;, M, &apos; &apos;, C1, &apos; &apos;, C2)</div><div class="line"># print(numRescueTeam)</div><div class="line"># print(roads)</div><div class="line"></div><div class="line">#################################################</div><div class="line"># N = 5; M = 6; C1 = 0; C2 = 2;</div><div class="line"># numRescueTeam = [1, 2, 1, 5, 3]</div><div class="line"># roads = [[0, 1, 1],</div><div class="line">#       [0, 2, 2],</div><div class="line">#       [0, 3, 1],</div><div class="line">#       [1, 2, 1],</div><div class="line">#       [2, 4, 1],</div><div class="line">#       [3, 4, 1]]</div><div class="line"></div><div class="line"></div><div class="line">#################################################</div><div class="line">count = 0</div><div class="line">maxTeam = 0</div><div class="line">mindis = float(&apos;inf&apos;)</div><div class="line">cityMap = [[-1 for i in range(N)] for j in range(N)]</div><div class="line">for i in range(M):</div><div class="line">    cityMap[roads[i][0]][roads[i][1]] = roads[i][2]</div><div class="line">    cityMap[roads[i][1]][roads[i][0]] = roads[i][2]</div><div class="line"></div><div class="line">visted = [0 for i in range(N)]</div><div class="line">def dfs(start, distance, team):</div><div class="line">    global mindis</div><div class="line">    global count</div><div class="line">    global maxTeam</div><div class="line">    if start == C2:</div><div class="line">        if distance &lt; mindis:</div><div class="line">            mindis = distance</div><div class="line">            count = 1</div><div class="line">            maxTeam = team</div><div class="line">        elif distance ==  mindis:</div><div class="line">            count += 1</div><div class="line">            if team &gt; maxTeam:</div><div class="line">                maxTeam = team</div><div class="line">        return</div><div class="line">    if distance &gt; mindis:</div><div class="line">        return</div><div class="line">    visted[start] = 1</div><div class="line">    for i in range(N):</div><div class="line">        if visted[i] == 0 and cityMap[start][i] &gt; 0:</div><div class="line">            dfs(i, distance + cityMap[start][i], team + numRescueTeam[i])</div><div class="line">    visted[start] = 0</div><div class="line">    return</div><div class="line"></div><div class="line">dfs(C1, 0, numRescueTeam[C1])</div><div class="line"></div><div class="line">print(count, maxTeam)</div></pre></td></tr></table></figure></p>
+<p>这个道题是在一张图中寻找两点之间最短路径的个数以及最短路径上权之和的问题。这道题我的第一个想法是用Dijkstra算法求单原点最短路径，然后通过一个堆栈记录下最短路径经过的节点，之后把路径上各个点的权重相加求和。但是这样做我没想明白怎么才能将多条长度相同的路径都记录下来，还有这样做进行了大量的冗余计算，计算了起点到其他非目标点的最短路径。<br>后来发觉可以通过一个简单的dfs（深度优先搜索）实现，于是就有了上面的实现。遇到了一个坑是python在函数中对全局变量进行修改的时候，需要在函数的一开始添加声明，就像上面的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">global mindis</div><div class="line">global count</div><div class="line">global maxTeam</div></pre></td></tr></table></figure></p>
+<p>否则就会产生歧义，认为是在函数中新建一个名叫mindis的变量。<br><del>最后一个问题是由于是python实现，速度上没法完全满足，我提交的结果中最后一个测试点由于超时而没通过，如果换用C或C++的实现会更好。</del><br>经过女票提示，增加了下面这一段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">if distance &gt; mindis:</div><div class="line">        return</div></pre></td></tr></table></figure></p>
+<p>就是在每一次搜索时检测当前累计路径长度是否已经超过全局记录的最短路径长度，如果超出，那么接下来的搜索就是不必要的，直接return，这样可以通过最后一个测试点。</p>
+<h1 id="1004-Counting-Leaves-30"><a href="#1004-Counting-Leaves-30" class="headerlink" title="1004. Counting Leaves (30)"></a>1004. Counting Leaves (30)</h1><p>题目：A family hierarchy is usually presented by a pedigree tree. Your job is to count those family members who have no child.</p>
+<h2 id="Input-3"><a href="#Input-3" class="headerlink" title="Input"></a>Input</h2><p>Each input file contains one test case. Each case starts with a line containing 0 &lt; N &lt; 100, the number of nodes in a tree, and M (&lt; N), the number of non-leaf nodes. Then M lines follow, each in the format:</p>
+<p>ID K ID[1] ID[2] … ID[K]<br>where ID is a two-digit number representing a given non-leaf node, K is the number of its children, followed by a sequence of two-digit ID’s of its children. For the sake of simplicity, let us fix the root ID to be 01.</p>
+<h2 id="Output-3"><a href="#Output-3" class="headerlink" title="Output"></a>Output</h2><p>For each test case, you are supposed to count those family members who have no child for every seniority level starting from the root. The numbers must be printed in a line, separated by a space, and there must be no extra space at the end of each line.</p>
+<p>The sample case represents a tree with only 2 nodes, where 01 is the root and 02 is its only child. Hence on the root 01 level, there is 0 leaf node; and on the next level, there is 1 leaf node. Then we should output “0 1” in a line.</p>
+<h2 id="Sample-Input-3"><a href="#Sample-Input-3" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>2 1<br>01 1 02</p>
+<h2 id="Sample-Output-3"><a href="#Sample-Output-3" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>0 1</p>
+<p>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"># 1004</div><div class="line"># by wboolean@2017</div><div class="line"></div><div class="line">def dfs(node, level):</div><div class="line">    global nodes</div><div class="line">    global levelLeafs</div><div class="line">    global maxDepth</div><div class="line">    if nodes[node] == []:</div><div class="line">        levelLeafs[level] += 1</div><div class="line">        if level &gt; maxDepth:</div><div class="line">            maxDepth = level</div><div class="line">        return</div><div class="line">    for i in nodes[node]:</div><div class="line">        dfs(i, level+1)</div><div class="line"></div><div class="line"># main</div><div class="line">line1 = input()</div><div class="line">line1 = line1.split()</div><div class="line">N = int(line1[0])</div><div class="line">M = int(line1[1])</div><div class="line">nodes = &#123;&#125;</div><div class="line">maxDepth = 0</div><div class="line">levelLeafs = [0 for i in range(101)]</div><div class="line">for i in range(M):</div><div class="line">    lines = input()</div><div class="line">    lines = lines.split()</div><div class="line">    ID = int(lines[0])</div><div class="line">    K = int(lines[1])</div><div class="line">    childId = lines[2:]</div><div class="line">    childIntId = []</div><div class="line">    for j in childId:</div><div class="line">        childIntId.append(int(j))</div><div class="line">    nodes[ID] = childIntId</div><div class="line">for i in range(N):</div><div class="line">    if (i+1) not in nodes.keys():</div><div class="line">        nodes[i+1] = []</div><div class="line">dfs(1, 0)</div><div class="line"># print(nodes)</div><div class="line"># print(levelLeafs)</div><div class="line"># print(maxDepth)</div><div class="line">result =&apos;&apos;</div><div class="line">for i in range(maxDepth):</div><div class="line">    result += str(levelLeafs[i]) + &apos; &apos;</div><div class="line">result += str(levelLeafs[maxDepth])</div><div class="line"></div><div class="line">print(result)</div></pre></td></tr></table></figure></p>
+<p>这道题要求数出一棵树每一个深度下的叶子结点的数目。最开始我花了很久的时间去构造一个叫node的class，给其中设置了一个变量叫depth的来记录这个节点的深度，想着最后将整棵树建立起来后分别计算每一个深度下的叶子结点的数目，但是陷入了一个问题，就是很难在依次插入node的同时顺便把每个节点的深度都计算出来。<br>反省了一下发现python中描述树还是用字典最简单，字典中的每一个键都是一个节点，对应的值为其孩子节点的list，如果是叶子节点就把对应的值初始化为[]空列表。之后从起点开始深度优先搜索，不断累加一个被初始化为0的每层叶子结点数的一个list，最后按照格式输出。<br>这个问题思路和第三题类似，但是卡了我2天，主要是因为想要自己造个轮子@_@</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+            <a href="/tags/PAT/" rel="tag">#PAT</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/05/tree/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Boolean Wang" />
+          <p class="site-author-name" itemprop="name">Boolean Wang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1001-A-B-Format-20"><span class="nav-number">1.</span> <span class="nav-text">1001.A+B Format (20)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">1.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">1.2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input"><span class="nav-number">1.3.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output"><span class="nav-number">1.4.</span> <span class="nav-text">Sample Output</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1002-A-B-for-Polynomials-25"><span class="nav-number">2.</span> <span class="nav-text">1002.A+B for Polynomials (25)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-1"><span class="nav-number">2.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-1"><span class="nav-number">2.2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-1"><span class="nav-number">2.3.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output-1"><span class="nav-number">2.4.</span> <span class="nav-text">Sample Output</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1003-Emergency-25"><span class="nav-number">3.</span> <span class="nav-text">1003.Emergency (25)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-2"><span class="nav-number">3.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-2"><span class="nav-number">3.2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-2"><span class="nav-number">3.3.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output-2"><span class="nav-number">3.4.</span> <span class="nav-text">Sample Output</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1004-Counting-Leaves-30"><span class="nav-number">4.</span> <span class="nav-text">1004. Counting Leaves (30)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-3"><span class="nav-number">4.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-3"><span class="nav-number">4.2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-3"><span class="nav-number">4.3.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output-3"><span class="nav-number">4.4.</span> <span class="nav-text">Sample Output</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Boolean Wang</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
