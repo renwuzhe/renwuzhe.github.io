@@ -1,0 +1,607 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python,PAT," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="这次是1005-1008题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PAT甲级1005-1008">
+<meta property="og:url" content="http://yoursite.com/2017/09/27/pat1005_1008/index.html">
+<meta property="og:site_name" content="Boolean's Blog">
+<meta property="og:description" content="这次是1005-1008题">
+<meta property="og:updated_time" content="2017-10-10T02:37:54.788Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PAT甲级1005-1008">
+<meta name="twitter:description" content="这次是1005-1008题">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Boolean'
+    }
+  };
+</script>
+
+  <title> PAT甲级1005-1008 | Boolean's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Boolean's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Ces't la vie</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PAT甲级1005-1008
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-09-27T19:03:06+08:00" content="2017-09-27">
+              2017-09-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PAT/" itemprop="url" rel="index">
+                    <span itemprop="name">PAT</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这次是1005-1008题<br><a id="more"></a></p>
+<h1 id="1005-Spell-It-Right-20"><a href="#1005-Spell-It-Right-20" class="headerlink" title="1005. Spell It Right (20)"></a>1005. Spell It Right (20)</h1><p>题目：Given a non-negative integer N, your task is to compute the sum of all the digits of N, and output every digit of the sum in English.</p>
+<h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case. Each case occupies one line which contains an N (&lt;= 10100).</p>
+<h2 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h2><p>For each test case, output in one line the digits of the sum in English words. There must be one space between two consecutive words, but no extra space at the end of a line.</p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h2><p>12345</p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h2><p>one five</p>
+<p>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># 1005</div><div class="line"># by wboolean@2017</div><div class="line"></div><div class="line">line = input()</div><div class="line">num = []</div><div class="line">for i in range(len(line)):</div><div class="line">    num.append(int(line[i]))</div><div class="line">numSum = sum(num)</div><div class="line">name = [&apos;zero&apos;, &apos;one&apos;, &apos;two&apos;, &apos;three&apos;, &apos;four&apos;, &apos;five&apos;, &apos;six&apos;, &apos;seven&apos;, &apos;eight&apos;, &apos;nine&apos;]</div><div class="line">numSum = str(numSum)</div><div class="line">result = &apos;&apos;</div><div class="line">for i in range(len(numSum)-1):</div><div class="line">    result += name[int(numSum[i])]</div><div class="line">    result += &apos; &apos;</div><div class="line">result += name[int(numSum[-1])]</div><div class="line">print(result)</div></pre></td></tr></table></figure></p>
+<p>这题没啥注意的</p>
+<h1 id="1006-Sign-In-and-Sign-Out-25"><a href="#1006-Sign-In-and-Sign-Out-25" class="headerlink" title="1006. Sign In and Sign Out (25)"></a>1006. Sign In and Sign Out (25)</h1><p>题目：At the beginning of every day, the first person who signs in the computer room will unlock the door, and the last one who signs out will lock the door. Given the records of signing in’s and out’s, you are supposed to find the ones who have unlocked and locked the door on that day.</p>
+<h2 id="Input-Specification-1"><a href="#Input-Specification-1" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case. Each case contains the records for one day. The case starts with a positive integer M, which is the total number of records, followed by M lines, each in the format:</p>
+<p>ID_number Sign_in_time Sign_out_time<br>where times are given in the format HH:MM:SS, and ID number is a string with no more than 15 characters.</p>
+<h2 id="Output-Specification-1"><a href="#Output-Specification-1" class="headerlink" title="Output Specification:"></a>Output Specification:</h2><p>For each test case, output in one line the ID numbers of the persons who have unlocked and locked the door on that day. The two ID numbers must be separated by one space.</p>
+<p>Note: It is guaranteed that the records are consistent. That is, the sign in time must be earlier than the sign out time for each person, and there are no two persons sign in or out at the same moment.</p>
+<h2 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input:"></a>Sample Input:</h2><p>3<br>CS301111 15:30:28 17:00:10<br>SC3021234 08:00:00 11:25:25<br>CS301133 21:45:00 21:58:40</p>
+<h2 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output:"></a>Sample Output:</h2><p>SC3021234 CS301133</p>
+<p>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"># 1006</div><div class="line">#by wboolean@2017</div><div class="line"></div><div class="line">def timeDelta(timeA, timeB):</div><div class="line">    A = timeA.split(&apos;:&apos;)</div><div class="line">    A = [int(i) for i in A]</div><div class="line">    B = timeB.split(&apos;:&apos;)</div><div class="line">    B = [int(i) for i in B]</div><div class="line">    CM = 0;CH = 0;</div><div class="line">    result = [0, 0, 0]</div><div class="line">    result[2] = A[2] - B[2]</div><div class="line">    if result[2] &lt; 0:</div><div class="line">        result[2] = result[2] + 60</div><div class="line">        CM = -1</div><div class="line">    result[1] = A[1] - B[1] + CM</div><div class="line">    if result[1] &lt; 0:</div><div class="line">        result[1] = result[1] + 60</div><div class="line">        CH = -1</div><div class="line">    result[0] = A[0] - B[0] + CH</div><div class="line">    return result</div><div class="line"></div><div class="line">def earlier(timeA, timeB):</div><div class="line">    delta = timeDelta(timeA, timeB)</div><div class="line">    for i in delta:</div><div class="line">        if i &lt; 0 :</div><div class="line">            return True</div><div class="line">    return False</div><div class="line"></div><div class="line">line1 = input()</div><div class="line">M = int(line1)</div><div class="line">record = []</div><div class="line">for i in range(M):</div><div class="line">    line = input()</div><div class="line">    line = line.split()</div><div class="line">    record.append([line[0], line[1], line[2]])</div><div class="line"></div><div class="line">result = [-1, -1]</div><div class="line">checkTime = [&apos;24:00:00&apos;, &apos;00:00:00&apos;]</div><div class="line"></div><div class="line">for i in range(len(record)):</div><div class="line">    if earlier(record[i][1], checkTime[0]):</div><div class="line">        result[0] = i</div><div class="line">        checkTime[0] = record[i][1]</div><div class="line">    if earlier(checkTime[1], record[i][2]):</div><div class="line">        result[1] = i</div><div class="line">        checkTime[1] = record[i][2]</div><div class="line"></div><div class="line">print(record[result[0]][0] + &apos; &apos; + record[result[1]][0])</div></pre></td></tr></table></figure></p>
+<p>也没啥好说的，实现了一个时间字符串比较的方法就行了。</p>
+<h1 id="1007-Maximum-Subsequence-Sum-25"><a href="#1007-Maximum-Subsequence-Sum-25" class="headerlink" title="1007. Maximum Subsequence Sum (25)"></a>1007. Maximum Subsequence Sum (25)</h1><p>题目：Given a sequence of K integers { N1, N2, …, NK }. A continuous subsequence is defined to be { Ni, Ni+1, …, Nj } where 1 &lt;= i &lt;= j &lt;= K. The Maximum Subsequence is the continuous subsequence which has the largest sum of its elements. For example, given sequence { -2, 11, -4, 13, -5, -2 }, its maximum subsequence is { 11, -4, 13 } with the largest sum being 20.</p>
+<p>Now you are supposed to find the largest sum, together with the first and the last numbers of the maximum subsequence.</p>
+<h2 id="Input-Specification-2"><a href="#Input-Specification-2" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case. Each case occupies two lines. The first line contains a positive integer K (&lt;= 10000). The second line contains K numbers, separated by a space.</p>
+<h2 id="Output-Specification-2"><a href="#Output-Specification-2" class="headerlink" title="Output Specification:"></a>Output Specification:</h2><p>For each test case, output in one line the largest sum, together with the first and the last numbers of the maximum subsequence. The numbers must be separated by one space, but there must be no extra space at the end of a line. In case that the maximum subsequence is not unique, output the one with the smallest indices i and j (as shown by the sample case). If all the K numbers are negative, then its maximum sum is defined to be 0, and you are supposed to output the first and the last numbers of the whole sequence.</p>
+<h2 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input:"></a>Sample Input:</h2><p>10<br>-10 1 2 3 4 -5 -23 3 7 -21</p>
+<h2 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output:"></a>Sample Output:</h2><p>10 1 4</p>
+<p>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"># 1007</div><div class="line"># by wboolean@2017</div><div class="line"></div><div class="line">line1 = input()</div><div class="line">line2 = input()</div><div class="line"></div><div class="line">##################################</div><div class="line"># line1 = &apos;10&apos;</div><div class="line"># line2 = &apos;-10 1 2 3 4 -5 -23 3 7 -21&apos;</div><div class="line"></div><div class="line">##################################</div><div class="line"></div><div class="line">K = int(line1)</div><div class="line">line2 = line2.split()</div><div class="line">num = [int(i) for i in line2]</div><div class="line"># all negtive?</div><div class="line">notPos = 1</div><div class="line">for i in num:</div><div class="line">    if i &gt; 0:</div><div class="line">        notPos = 0</div><div class="line"></div><div class="line">if notPos == 1:</div><div class="line">    haszero = 0</div><div class="line">    for i in num:</div><div class="line">        if i == 0:</div><div class="line">            haszero = 1</div><div class="line">            break</div><div class="line">    if haszero == 1:</div><div class="line">        print(0, 0, 0)</div><div class="line">    else:</div><div class="line">        print(0, num[0], num[K-1])</div><div class="line">else:</div><div class="line">    maxSum = -1</div><div class="line">    result = [-1, -1]</div><div class="line">    for i in range(K):</div><div class="line">        if num[i] &gt;= 0:</div><div class="line">            numSum = 0</div><div class="line">            for j in range(i, K):</div><div class="line">                numSum += num[j]</div><div class="line">                if numSum &lt;= 0:</div><div class="line">                    break</div><div class="line">                if numSum &gt; maxSum:</div><div class="line">                    maxSum = numSum</div><div class="line">                    result = [i, j]</div><div class="line"></div><div class="line">    print(maxSum, num[result[0]], num[result[1]])</div></pre></td></tr></table></figure></p>
+<p>这个题目有三个注意的点：第一个比较简单，是他要求输出的是最大和以及该序列的首末数字，而不是序号，这个卡了我好久才发现，蠢哭；第二个是在检查完非正notPos之后，全是负数和由负数及0组成是两种情况，要分开讨论；第三是运行时间的问题，二次遍历速度很慢，因此要优化，我这里在循环i的时候要确保num[i]&gt;=0这个条件，确保不检查负数开始的序列，其次是在内部循环j的时候，一旦发现和为0就跳到下一个i，因为之后的序列已经不会是正确答案了。</p>
+<h1 id="1008-Elevator-20"><a href="#1008-Elevator-20" class="headerlink" title="1008. Elevator (20)"></a>1008. Elevator (20)</h1><p>题目：The highest building in our city has only one elevator. A request list is made up with N positive numbers. The numbers denote at which floors the elevator will stop, in specified order. It costs 6 seconds to move the elevator up one floor, and 4 seconds to move down one floor. The elevator will stay for 5 seconds at each stop.</p>
+<p>For a given request list, you are to compute the total time spent to fulfill the requests on the list. The elevator is on the 0th floor at the beginning and does not have to return to the ground floor when the requests are fulfilled.</p>
+<h2 id="Input-Specification-3"><a href="#Input-Specification-3" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case. Each case contains a positive integer N, followed by N positive numbers. All the numbers in the input are less than 100.</p>
+<h2 id="Output-Specification-3"><a href="#Output-Specification-3" class="headerlink" title="Output Specification:"></a>Output Specification:</h2><p>For each test case, print the total time on a single line.</p>
+<h2 id="Sample-Input-3"><a href="#Sample-Input-3" class="headerlink" title="Sample Input:"></a>Sample Input:</h2><p>3 2 3 1</p>
+<h2 id="Sample-Output-3"><a href="#Sample-Output-3" class="headerlink" title="Sample Output:"></a>Sample Output:</h2><p>41</p>
+<p>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"># 1008</div><div class="line"># by wboolean@2017</div><div class="line"></div><div class="line">def calTime(nowPos, targetPos):</div><div class="line">    if nowPos == targetPos:</div><div class="line">        return 5</div><div class="line">    elif nowPos &lt; targetPos:</div><div class="line">        return (targetPos - nowPos) * 6 + 5</div><div class="line">    elif nowPos &gt; targetPos:</div><div class="line">        return (nowPos - targetPos) * 4 + 5</div><div class="line"></div><div class="line">line = input().split()</div><div class="line">N = int(line[0])</div><div class="line">queue = []</div><div class="line">for i in range(1, N+1):</div><div class="line">    queue.append(int(line[i]))</div><div class="line">totalTime = 0</div><div class="line">nowPos = 0</div><div class="line">for i in range(N):</div><div class="line">    totalTime += calTime(nowPos, queue[i])</div><div class="line">    nowPos = queue[i]</div><div class="line"></div><div class="line">print(totalTime)</div></pre></td></tr></table></figure></p>
+<p>这个题有一个题目没说清楚的是如果队列中相邻的两个站点相同的话虽然没有电梯运行的时间，但是仍然要等5秒钟的</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+            <a href="/tags/PAT/" rel="tag">#PAT</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/21/pat1001_1004/" rel="next" title="PAT甲级1001-1004">
+                <i class="fa fa-chevron-left"></i> PAT甲级1001-1004
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Boolean Wang" />
+          <p class="site-author-name" itemprop="name">Boolean Wang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1005-Spell-It-Right-20"><span class="nav-number">1.</span> <span class="nav-text">1005. Spell It Right (20)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-Specification"><span class="nav-number">1.1.</span> <span class="nav-text">Input Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-Specification"><span class="nav-number">1.2.</span> <span class="nav-text">Output Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input"><span class="nav-number">1.3.</span> <span class="nav-text">Sample Input:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output"><span class="nav-number">1.4.</span> <span class="nav-text">Sample Output:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1006-Sign-In-and-Sign-Out-25"><span class="nav-number">2.</span> <span class="nav-text">1006. Sign In and Sign Out (25)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-Specification-1"><span class="nav-number">2.1.</span> <span class="nav-text">Input Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-Specification-1"><span class="nav-number">2.2.</span> <span class="nav-text">Output Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-1"><span class="nav-number">2.3.</span> <span class="nav-text">Sample Input:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output-1"><span class="nav-number">2.4.</span> <span class="nav-text">Sample Output:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1007-Maximum-Subsequence-Sum-25"><span class="nav-number">3.</span> <span class="nav-text">1007. Maximum Subsequence Sum (25)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-Specification-2"><span class="nav-number">3.1.</span> <span class="nav-text">Input Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-Specification-2"><span class="nav-number">3.2.</span> <span class="nav-text">Output Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-2"><span class="nav-number">3.3.</span> <span class="nav-text">Sample Input:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output-2"><span class="nav-number">3.4.</span> <span class="nav-text">Sample Output:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1008-Elevator-20"><span class="nav-number">4.</span> <span class="nav-text">1008. Elevator (20)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-Specification-3"><span class="nav-number">4.1.</span> <span class="nav-text">Input Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-Specification-3"><span class="nav-number">4.2.</span> <span class="nav-text">Output Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-3"><span class="nav-number">4.3.</span> <span class="nav-text">Sample Input:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output-3"><span class="nav-number">4.4.</span> <span class="nav-text">Sample Output:</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Boolean Wang</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
