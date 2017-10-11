@@ -1,0 +1,614 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python,PAT," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="这次是1009-1012题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PAT甲级1009-1012">
+<meta property="og:url" content="http://yoursite.com/2017/10/10/pat1009_1012/index.html">
+<meta property="og:site_name" content="Boolean's Blog">
+<meta property="og:description" content="这次是1009-1012题">
+<meta property="og:updated_time" content="2017-10-11T09:10:31.660Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PAT甲级1009-1012">
+<meta name="twitter:description" content="这次是1009-1012题">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Boolean'
+    }
+  };
+</script>
+
+  <title> PAT甲级1009-1012 | Boolean's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Boolean's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Ces't la vie</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PAT甲级1009-1012
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-10-10T10:39:45+08:00" content="2017-10-10">
+              2017-10-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PAT/" itemprop="url" rel="index">
+                    <span itemprop="name">PAT</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这次是1009-1012题<br><a id="more"></a></p>
+<h1 id="1009-Product-of-Polynomials-25"><a href="#1009-Product-of-Polynomials-25" class="headerlink" title="1009. Product of Polynomials (25)"></a>1009. Product of Polynomials (25)</h1><p>题目：This time, you are supposed to find A*B where A and B are two polynomials.</p>
+<h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case. Each case occupies 2 lines, and each line contains the information of a polynomial: K N1 aN1 N2 aN2 … NK aNK, where K is the number of nonzero terms in the polynomial, Ni and aNi (i=1, 2, …, K) are the exponents and coefficients, respectively. It is given that 1 &lt;= K &lt;= 10, 0 &lt;= NK &lt; … &lt; N2 &lt; N1 &lt;=1000.</p>
+<h2 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h2><p>For each test case you should output the product of A and B in one line, with the same format as the input. Notice that there must be NO extra space at the end of each line. Please be accurate up to 1 decimal place.</p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>2 1 2.4 0 3.2<br>2 2 1.5 1 0.5</p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>3 3 3.6 2 6.0 1 1.6</p>
+<p>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"># 1009</div><div class="line"># by wboolean@2017</div><div class="line"></div><div class="line">line1 = input().split()</div><div class="line">line2 = input().split()</div><div class="line">#######################</div><div class="line"># line1 = [&apos;2&apos;, &apos;1&apos;, &apos;-9.0&apos;, &apos;0&apos;, &apos;3.0&apos;]</div><div class="line"># line2 = [&apos;2&apos;, &apos;2&apos;, &apos;1.5&apos;, &apos;1&apos;, &apos;0.5&apos;]</div><div class="line">#######################</div><div class="line">poly1 = &#123;&#125;</div><div class="line">poly2 = &#123;&#125;</div><div class="line">k1 = int(line1[0])</div><div class="line">line1 = line1[1:]</div><div class="line">for i in range(k1):</div><div class="line">    poly1[int(line1[2*i])] = float(line1[2*i+1])</div><div class="line">k2 = int(line2[0])</div><div class="line">line2 = line2[1:]</div><div class="line">for i in range(k2):</div><div class="line">    poly2[int(line2[2*i])] = float(line2[2*i+1])</div><div class="line"># print(poly1)</div><div class="line"># print(poly2)</div><div class="line">result = &#123;&#125;</div><div class="line">for key1, value1 in poly1.items():</div><div class="line">    for key2, value2 in poly2.items():</div><div class="line">        v = value1 * value2</div><div class="line">        v = round(v, 1)</div><div class="line">        k = key1 + key2</div><div class="line">        if k in result.keys():</div><div class="line">            result[k] += v</div><div class="line">        else:</div><div class="line">            result[k] = v</div><div class="line"># print(result)</div><div class="line">delZero = &#123;&#125;</div><div class="line">for key, value in result.items():</div><div class="line">    delZero[key] = value</div><div class="line">for key, value in result.items():</div><div class="line">    if value == 0:</div><div class="line">        del(delZero[key])</div><div class="line"># print(delZero)</div><div class="line">e = []</div><div class="line">for key in delZero.keys():</div><div class="line">    e.append(key)</div><div class="line">e.sort(reverse=True)</div><div class="line"># print(e)</div><div class="line">N = len(e)</div><div class="line">answer = &apos;&apos; + str(N)</div><div class="line">if N &gt; 0:</div><div class="line">    for i in range(N):</div><div class="line">        answer += &apos; &apos; + str(e[i]) + &apos; &apos; + str(delZero[e[i]])</div><div class="line">print(answer)</div></pre></td></tr></table></figure></p>
+<p>主要是对于结果是0的处理。<br>另外在编写中遇到一个问题值得注意，遍历一个字典的时候，这个字典本身的长度不能变化，因此在我的实现中使用了一个delZero的字典对result进行了深拷贝，然后在遍历result的时候对delZero进行操作。</p>
+<h1 id="1010-Radix-25"><a href="#1010-Radix-25" class="headerlink" title="1010. Radix (25)"></a>1010. Radix (25)</h1><p>题目：Given a pair of positive integers, for example, 6 and 110, can this equation 6 = 110 be true? The answer is “yes”, if 6 is a decimal number and 110 is a binary number.</p>
+<p>Now for any pair of positive integers N1 and N2, your task is to find the radix of one number while that of the other is given.</p>
+<h2 id="Input-Specification-1"><a href="#Input-Specification-1" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case. Each case occupies a line which contains 4 positive integers:<br>N1 N2 tag radix<br>Here N1 and N2 each has no more than 10 digits. A digit is less than its radix and is chosen from the set {0-9, a-z} where 0-9 represent the decimal numbers 0-9, and a-z represent the decimal numbers 10-35. The last number “radix” is the radix of N1 if “tag” is 1, or of N2 if “tag” is 2.</p>
+<h2 id="Output-Specification-1"><a href="#Output-Specification-1" class="headerlink" title="Output Specification:"></a>Output Specification:</h2><p>For each test case, print in one line the radix of the other number so that the equation N1 = N2 is true. If the equation is impossible, print “Impossible”. If the solution is not unique, output the smallest possible radix.</p>
+<h2 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input 1:"></a>Sample Input 1:</h2><p>6 110 1 10</p>
+<h2 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output 1:"></a>Sample Output 1:</h2><p>2</p>
+<h2 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input 2:"></a>Sample Input 2:</h2><p>1 ab 1 2</p>
+<h2 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output 2:"></a>Sample Output 2:</h2><p>Impossible</p>
+<p>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"># 1010</div><div class="line"># by wboolean@2017</div><div class="line">table = &#123;&apos;0&apos;:0, &apos;1&apos;:1, &apos;2&apos;:2, &apos;3&apos;:3, &apos;4&apos;:4, &apos;5&apos;:5, &apos;6&apos;:6, &apos;7&apos;:7, &apos;8&apos;:8, &apos;9&apos;:9, &apos;a&apos;:10, &apos;b&apos;:11, &apos;c&apos;:12, &apos;d&apos;:13, &apos;e&apos;:14, &apos;f&apos;:15, &apos;g&apos;:16, &apos;h&apos;:17, \</div><div class="line">            &apos;i&apos;:18, &apos;j&apos;:19, &apos;k&apos;:20, &apos;l&apos;:21, &apos;m&apos;:22, &apos;n&apos;:23, &apos;o&apos;:24, &apos;p&apos;:25, &apos;q&apos;:26, &apos;r&apos;:27, &apos;s&apos;:28, &apos;t&apos;:29, &apos;u&apos;:30, &apos;v&apos;:31, &apos;w&apos;:32, &apos;x&apos;:33, &apos;y&apos;:34, \</div><div class="line">            &apos;z&apos;:35&#125;</div><div class="line">def toDecimal(num, radix):</div><div class="line">    strNum = list(num)</div><div class="line">    result = 0</div><div class="line">    L = len(strNum)</div><div class="line">    for i in range(L):</div><div class="line">        nowChar = strNum[-i-1]</div><div class="line">        nowValue = (radix ** i) * table[nowChar]</div><div class="line">        result += nowValue</div><div class="line">    return result</div><div class="line"></div><div class="line">def finMinRadix(num):</div><div class="line">    strNum = list(num)</div><div class="line">    minRadix = 2</div><div class="line">    for i in range(len(strNum)):</div><div class="line">        nowValue = table[strNum[i]]</div><div class="line">        if (nowValue+1) &gt; minRadix:</div><div class="line">            minRadix = nowValue + 1</div><div class="line">    return minRadix</div><div class="line"></div><div class="line">def binarySearch(num1, num2, lowRadix, highRadix):</div><div class="line">    if highRadix &lt; lowRadix:</div><div class="line">        return &apos;Impossible&apos;</div><div class="line">    mid = (lowRadix + highRadix) // 2</div><div class="line">    delta = num1 - toDecimal(num2, mid)</div><div class="line">    if delta &gt; 0:</div><div class="line">        return binarySearch(num1, num2, mid + 1, highRadix)</div><div class="line">    if delta &lt; 0:</div><div class="line">        return binarySearch(num1, num2, lowRadix, mid - 1)</div><div class="line">    else:</div><div class="line">        return mid</div><div class="line"></div><div class="line"># main</div><div class="line">line = input().split()</div><div class="line">############################</div><div class="line"># line = [&apos;1&apos;, &apos;ab&apos;, &apos;1&apos;, &apos;2&apos;]</div><div class="line">############################</div><div class="line">N1 = line[0]</div><div class="line">N2 = line[1]</div><div class="line">tag = int(line[2])</div><div class="line">radix = int(line[3])</div><div class="line"></div><div class="line">if tag == 1:</div><div class="line">    num1 = toDecimal(N1, radix)</div><div class="line">    num2 = N2</div><div class="line">else:</div><div class="line">    num1 = toDecimal(N2, radix)</div><div class="line">    num2 = N1</div><div class="line"># print(num1)</div><div class="line"># print(num2)</div><div class="line">num2MaxRadix = num1</div><div class="line">num2MinRadix = finMinRadix(num2)</div><div class="line">if len(num2) == 1:</div><div class="line">    value = table[num2]</div><div class="line">    if value == num1:</div><div class="line">        if value &lt; 2:</div><div class="line">            print(2)</div><div class="line">        else:</div><div class="line">            print(value + 1)</div><div class="line">    else:</div><div class="line">        print(&apos;Impossible&apos;)</div><div class="line">else:</div><div class="line">    print(binarySearch(num1, num2, num2MinRadix, num2MaxRadix))</div></pre></td></tr></table></figure></p>
+<p>这个题有两个遇到的问题。<br>第一个是不能一个一个进制依次遍历去检查相等，这样在num1非常大的时候消耗的时间非常多，需要使用查找方法提速，在这里因为随着进制的增加，num2代表的数字也单调增加，所以是有序的序列，可以用二分查找。需要注意的是当num2只含有一个字符的时候可能会存在多解，也就是多个进制下都相等的情况，需要单独讨论。<br>第二个问题是在写完后出现的，怎么提交都不对，错了很多个检测点，最后在女票帮助下找到了是在二分查找取中间值mid时，我原本写的是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mid = round((lowRadix + highRadix) / 2, 0)</div></pre></td></tr></table></figure></p>
+<p>这样mid的结果是一个float，最后输出会带小数点。修改成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mid = (lowRadix + highRadix) // 2</div></pre></td></tr></table></figure></p>
+<p>后就没有这个问题了。</p>
+<p>#1011. World Cup Betting (20)<br>题目：With the 2010 FIFA World Cup running, football fans the world over were becoming increasingly excited as the best players from the best teams doing battles for the World Cup trophy in South Africa. Similarly, football betting fans were putting their money where their mouths were, by laying all manner of World Cup bets.</p>
+<p>Chinese Football Lottery provided a “Triple Winning” game. The rule of winning was simple: first select any three of the games. Then for each selected game, bet on one of the three possible results – namely W for win, T for tie, and L for lose. There was an odd assigned to each result. The winner’s odd would be the product of the three odds times 65%.</p>
+<p>For example, 3 games’ odds are given as the following:</p>
+<p> W    T    L<br>1.1  2.5  1.7<br>1.2  3.0  1.6<br>4.1  1.2  1.1<br>To obtain the maximum profit, one must buy W for the 3rd game, T for the 2nd game, and T for the 1st game. If each bet takes 2 yuans, then the maximum profit would be (4.1<em>3.0</em>2.5<em>65%-1)</em>2 = 37.98 yuans (accurate up to 2 decimal places).</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>Each input file contains one test case. Each case contains the betting information of 3 games. Each game occupies a line with three distinct odds corresponding to W, T and L.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, print in one line the best bet of each game, and the maximum profit accurate up to 2 decimal places. The characters and the number must be separated by one space.</p>
+<h2 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>1.1 2.5 1.7<br>1.2 3.0 1.6<br>4.1 1.2 1.1</p>
+<h2 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>T T W 37.98</p>
+<p>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"># 1011</div><div class="line"># by wboolean@2017</div><div class="line">game = []</div><div class="line">for i in range(3):</div><div class="line">    line = input().split()</div><div class="line">    gametmp = [float(i) for i in line]</div><div class="line">    game.append(gametmp)</div><div class="line">bet = [-1, -1, -1]</div><div class="line">odd = [0, 0, 0]</div><div class="line">for i in range(3):</div><div class="line">    odd[i] = max(game[i])</div><div class="line">    bet[i] = game[i].index(odd[i])</div><div class="line">profit = (odd[0] * odd[1] * odd[2] * 0.65 -1) * 2</div><div class="line">result = &apos;&apos;</div><div class="line">for i in range(3):</div><div class="line">    if bet[i] == 0:</div><div class="line">        result += &apos;W &apos;</div><div class="line">    elif bet[i] == 1:</div><div class="line">        result += &apos;T &apos;</div><div class="line">    elif bet[i] == 2:</div><div class="line">        result += &apos;L &apos;</div><div class="line">result += str(round(profit, 2))</div><div class="line">print(result)</div></pre></td></tr></table></figure></p>
+<h1 id="1012-The-Best-Rank-25"><a href="#1012-The-Best-Rank-25" class="headerlink" title="1012. The Best Rank (25)"></a>1012. The Best Rank (25)</h1><p>题目：To evaluate the performance of our first year CS majored students, we consider their grades of three courses only: C - C Programming Language, M - Mathematics (Calculus or Linear Algebra), and E - English. At the mean time, we encourage students by emphasizing on their best ranks – that is, among the four ranks with respect to the three courses and the average grade, we print the best rank for each student.</p>
+<p>For example, The grades of C, M, E and A - Average of 4 students are given as the following:</p>
+<p>StudentID  C  M  E  A<br>310101     98 85 88 90<br>310102     70 95 88 84<br>310103     82 87 94 88<br>310104     91 91 91 91<br>Then the best ranks for all the students are No.1 since the 1st one has done the best in C Programming Language, while the 2nd one in Mathematics, the 3rd one in English, and the last one in average.</p>
+<h2 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h2><p>Each input file contains one test case. Each case starts with a line containing 2 numbers N and M (&lt;=2000), which are the total number of students, and the number of students who would check their ranks, respectively. Then N lines follow, each contains a student ID which is a string of 6 digits, followed by the three integer grades (in the range of [0, 100]) of that student in the order of C, M and E. Then there are M lines, each containing a student ID.</p>
+<h2 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h2><p>For each of the M students, print in one line the best rank for him/her, and the symbol of the corresponding rank, separated by a space.</p>
+<p>The priorities of the ranking methods are ordered as A &gt; C &gt; M &gt; E. Hence if there are two or more ways for a student to obtain the same best rank, output the one with the highest priority.</p>
+<p>If a student is not on the grading list, simply output “N/A”.</p>
+<h2 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>5 6<br>310101 98 85 88<br>310102 70 95 88<br>310103 82 87 94<br>310104 91 91 91<br>310105 85 90 90<br>310101<br>310102<br>310103<br>310104<br>310105<br>999999</p>
+<h2 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>1 C<br>1 M<br>1 E<br>1 A<br>3 A<br>N/A</p>
+<p>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line"># 1012</div><div class="line"># by wboolean@2017</div><div class="line"></div><div class="line">line1 = input().split()</div><div class="line">N = int(line1[0])</div><div class="line">m = int(line1[1])</div><div class="line">students = &#123;&#125;</div><div class="line">studentsRank = &#123;&#125;</div><div class="line">for i in range(N):</div><div class="line">    line = input().split()</div><div class="line">    C = float(line[1])</div><div class="line">    M = float(line[2])</div><div class="line">    E = float(line[3])</div><div class="line">    A = (C + M + E) // 3</div><div class="line">    grades = (C, M, E, A)</div><div class="line">    students[line[0]] = grades</div><div class="line"></div><div class="line">queue = []</div><div class="line">for i in range(m):</div><div class="line">    queue.append(input())</div><div class="line"></div><div class="line">studentsRank = &#123;&#125;</div><div class="line">for key in students.keys():</div><div class="line">    studentsRank[key] = [-1, -1, -1, -1]</div><div class="line">rankedA = sorted(students.items(), key=lambda student : student[1][3], reverse=True)</div><div class="line">for i in range(len(rankedA)):</div><div class="line">    if i == 0:</div><div class="line">        studentsRank[rankedA[i][0]][0] = 1</div><div class="line">    else:</div><div class="line">        if rankedA[i][1][3] == rankedA[i-1][1][3]:</div><div class="line">            studentsRank[rankedA[i][0]][0] = studentsRank[rankedA[i-1][0]][0]</div><div class="line">        else:</div><div class="line">            studentsRank[rankedA[i][0]][0] = i + 1</div><div class="line"></div><div class="line">rankedC = sorted(students.items(), key=lambda student : student[1][0], reverse=True)</div><div class="line">for i in range(len(rankedC)):</div><div class="line">    if i == 0:</div><div class="line">        studentsRank[rankedC[i][0]][1] = 1</div><div class="line">    else:</div><div class="line">        if rankedC[i][1][0] == rankedC[i-1][1][0]:</div><div class="line">            studentsRank[rankedC[i][0]][1] = studentsRank[rankedC[i-1][0]][1]</div><div class="line">        else:</div><div class="line">            studentsRank[rankedC[i][0]][1] = i + 1</div><div class="line"></div><div class="line">rankedM = sorted(students.items(), key=lambda student : student[1][1], reverse=True)</div><div class="line">for i in range(len(rankedM)):</div><div class="line">    if i == 0:</div><div class="line">        studentsRank[rankedM[i][0]][2] = 1</div><div class="line">    else:</div><div class="line">        if rankedM[i][1][1] == rankedM[i-1][1][1]:</div><div class="line">            studentsRank[rankedM[i][0]][2] = studentsRank[rankedM[i-1][0]][2]</div><div class="line">        else:</div><div class="line">            studentsRank[rankedM[i][0]][2] = i + 1</div><div class="line"></div><div class="line">rankedE = sorted(students.items(), key=lambda student : student[1][2], reverse=True)</div><div class="line">for i in range(len(rankedE)):</div><div class="line">    if i == 0:</div><div class="line">        studentsRank[rankedE[i][0]][3] = 1</div><div class="line">    else:</div><div class="line">        if rankedE[i][1][2] == rankedE[i-1][1][2]:</div><div class="line">            studentsRank[rankedE[i][0]][3] = studentsRank[rankedE[i-1][0]][3]</div><div class="line">        else:</div><div class="line">            studentsRank[rankedE[i][0]][3] = i + 1</div><div class="line"></div><div class="line">table = [&apos;A&apos;, &apos;C&apos;, &apos;M&apos;, &apos;E&apos;]</div><div class="line">for key in studentsRank.keys():</div><div class="line">    ranktmp = studentsRank[key]</div><div class="line">    bestRank = min(ranktmp)</div><div class="line">    bestChar = table[ranktmp.index(bestRank)]</div><div class="line">    studentsRank[key] = [bestRank, bestChar]</div><div class="line"></div><div class="line">for i in queue:</div><div class="line">    if i not in studentsRank.keys():</div><div class="line">        print(&apos;N/A&apos;)</div><div class="line">    else:</div><div class="line">        print(studentsRank[i][0], studentsRank[i][1])</div></pre></td></tr></table></figure></p>
+<p>这题，头很大。。。<br>主要注意一点，排名中会出现并列的情况，要处理好，另外就是最后查询时不要有运算的部分，否则容易超时，在建立字典的时候全算完。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+            <a href="/tags/PAT/" rel="tag">#PAT</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/27/pat1005_1008/" rel="next" title="PAT甲级1005-1008">
+                <i class="fa fa-chevron-left"></i> PAT甲级1005-1008
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Boolean Wang" />
+          <p class="site-author-name" itemprop="name">Boolean Wang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1009-Product-of-Polynomials-25"><span class="nav-number">1.</span> <span class="nav-text">1009. Product of Polynomials (25)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-Specification"><span class="nav-number">1.1.</span> <span class="nav-text">Input Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-Specification"><span class="nav-number">1.2.</span> <span class="nav-text">Output Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input"><span class="nav-number">1.3.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output"><span class="nav-number">1.4.</span> <span class="nav-text">Sample Output</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1010-Radix-25"><span class="nav-number">2.</span> <span class="nav-text">1010. Radix (25)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-Specification-1"><span class="nav-number">2.1.</span> <span class="nav-text">Input Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-Specification-1"><span class="nav-number">2.2.</span> <span class="nav-text">Output Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-1"><span class="nav-number">2.3.</span> <span class="nav-text">Sample Input 1:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output-1"><span class="nav-number">2.4.</span> <span class="nav-text">Sample Output 1:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-2"><span class="nav-number">2.5.</span> <span class="nav-text">Sample Input 2:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output-2"><span class="nav-number">2.6.</span> <span class="nav-text">Sample Output 2:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">2.7.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">2.8.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-1"><span class="nav-number">2.9.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output-1"><span class="nav-number">2.10.</span> <span class="nav-text">Sample Output</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1012-The-Best-Rank-25"><span class="nav-number">3.</span> <span class="nav-text">1012. The Best Rank (25)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-1"><span class="nav-number">3.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-1"><span class="nav-number">3.2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-2"><span class="nav-number">3.3.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output-2"><span class="nav-number">3.4.</span> <span class="nav-text">Sample Output</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Boolean Wang</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
