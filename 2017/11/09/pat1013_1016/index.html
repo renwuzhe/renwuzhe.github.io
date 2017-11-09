@@ -1,0 +1,632 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python,PAT," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="这次是1013-1016题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PAT甲级1013-1016">
+<meta property="og:url" content="http://yoursite.com/2017/11/09/pat1013_1016/index.html">
+<meta property="og:site_name" content="Boolean's Blog">
+<meta property="og:description" content="这次是1013-1016题">
+<meta property="og:updated_time" content="2017-11-09T02:26:55.005Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PAT甲级1013-1016">
+<meta name="twitter:description" content="这次是1013-1016题">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Boolean'
+    }
+  };
+</script>
+
+  <title> PAT甲级1013-1016 | Boolean's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Boolean's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Ces't la vie</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PAT甲级1013-1016
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-11-09T10:26:03+08:00" content="2017-11-09">
+              2017-11-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PAT/" itemprop="url" rel="index">
+                    <span itemprop="name">PAT</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这次是1013-1016题<br><a id="more"></a></p>
+<h1 id="1013-Battle-Over-Cities-25"><a href="#1013-Battle-Over-Cities-25" class="headerlink" title="1013. Battle Over Cities (25)"></a>1013. Battle Over Cities (25)</h1><p>题目：It is vitally important to have all the cities connected by highways in a war. If a city is occupied by the enemy, all the highways from/toward that city are closed. We must know immediately if we need to repair any other highways to keep the rest of the cities connected. Given the map of cities which have all the remaining highways marked, you are supposed to tell the number of highways need to be repaired, quickly.</p>
+<p>For example, if we have 3 cities and 2 highways connecting city1-city2 and city1-city3. Then if city1 is occupied by the enemy, we must have 1 highway repaired, that is the highway city2-city3.</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>Each input file contains one test case. Each case starts with a line containing 3 numbers N (&lt;1000), M and K, which are the total number of cities, the number of remaining highways, and the number of cities to be checked, respectively. Then M lines follow, each describes a highway by 2 integers, which are the numbers of the cities the highway connects. The cities are numbered from 1 to N. Finally there is a line containing K numbers, which represent the cities we concern.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each of the K cities, output in a line the number of highways need to be repaired if that city is lost.</p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>3 2 3<br>1 2<br>1 3<br>1 2 3</p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>1<br>0<br>0</p>
+<p>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"># 1013</div><div class="line"># wbl@2017</div><div class="line"></div><div class="line">def dfs(pos):</div><div class="line">    global graphB</div><div class="line">    global visited</div><div class="line">    visited[pos] = 1</div><div class="line">    for i in range(N):</div><div class="line">        if visited[i] == 0 and graphB[pos][i] == 1:</div><div class="line">            dfs(i)</div><div class="line">    return</div><div class="line"></div><div class="line">line1 = input().split()</div><div class="line">N = int(line1[0])</div><div class="line">M = int(line1[1])</div><div class="line">K = int(line1[2])</div><div class="line">graph = [[-1 for i in range(N)] for j in range(N)]</div><div class="line">for i in range(M):</div><div class="line">    line = input().split()</div><div class="line">    city1 = int(line[0])</div><div class="line">    city2 = int(line[1])</div><div class="line">    graph[city1-1][city2-1] = 1</div><div class="line">    graph[city2-1][city1-1] = 1</div><div class="line"></div><div class="line"># for i in range(N):</div><div class="line">#   print(graph[i])</div><div class="line"></div><div class="line">line2 = input().split()</div><div class="line">queue = []</div><div class="line">for i in range(K):</div><div class="line">    queue.append(int(line2[i]))</div><div class="line"></div><div class="line">####################</div><div class="line"></div><div class="line">for j in range(K):</div><div class="line">    cityB = queue[j]</div><div class="line">    graphB = []</div><div class="line">    for i in graph:</div><div class="line">        graphB.append(i[:])</div><div class="line"></div><div class="line">    for i in range(N):</div><div class="line">        graphB[i][cityB-1] = -1</div><div class="line">        graphB[cityB-1][i] = -1</div><div class="line">    </div><div class="line">    # for i in range(N):</div><div class="line">    #   print(graphB[i])</div><div class="line"></div><div class="line">    parts = 0</div><div class="line">    visited = [0 for i in range(N)]</div><div class="line">    visited[cityB - 1] = 1</div><div class="line"></div><div class="line">    for i in range(N):</div><div class="line">        if visited[i] == 0:</div><div class="line">            # print(visited)</div><div class="line">            dfs(i)</div><div class="line">            parts += 1</div><div class="line">    result = parts - 1</div><div class="line">    if result &lt; 0:</div><div class="line">        result = 0</div><div class="line">    print(result)</div></pre></td></tr></table></figure></p>
+<p>不知道为什么有几个点过不了=。=可能是语言的问题</p>
+<h1 id="1014-Waiting-in-Line-30"><a href="#1014-Waiting-in-Line-30" class="headerlink" title="1014. Waiting in Line (30)"></a>1014. Waiting in Line (30)</h1><p>题目：Suppose a bank has N windows open for service. There is a yellow line in front of the windows which devides the waiting area into two parts. The rules for the customers to wait in line are:</p>
+<p>The space inside the yellow line in front of each window is enough to contain a line with M customers. Hence when all the N lines are full, all the customers after (and including) the (NM+1)st one will have to wait in a line behind the yellow line.<br>Each customer will choose the shortest line to wait in when crossing the yellow line. If there are two or more lines with the same length, the customer will always choose the window with the smallest number.<br>Customer[i] will take T[i] minutes to have his/her transaction processed.<br>The first N customers are assumed to be served at 8:00am.<br>Now given the processing time of each customer, you are supposed to tell the exact time at which a customer has his/her business done.</p>
+<p>For example, suppose that a bank has 2 windows and each window may have 2 custmers waiting inside the yellow line. There are 5 customers waiting with transactions taking 1, 2, 6, 4 and 3 minutes, respectively. At 08:00 in the morning, customer1 is served at window1 while customer2 is served at window2. Customer3 will wait in front of window1 and customer4 will wait in front of window2. Customer5 will wait behind the yellow line.</p>
+<p>At 08:01, customer1 is done and customer5 enters the line in front of window1 since that line seems shorter now. Customer2 will leave at 08:02, customer4 at 08:06, customer3 at 08:07, and finally customer5 at 08:10.</p>
+<h2 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h2><p>Each input file contains one test case. Each case starts with a line containing 4 positive integers: N (&lt;=20, number of windows), M (&lt;=10, the maximum capacity of each line inside the yellow line), K (&lt;=1000, number of customers), and Q (&lt;=1000, number of customer queries).</p>
+<p>The next line contains K positive integers, which are the processing time of the K customers.</p>
+<p>The last line contains Q positive integers, which represent the customers who are asking about the time they can have their transactions done. The customers are numbered from 1 to K.</p>
+<h2 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h2><p>For each of the Q customers, print in one line the time at which his/her transaction is finished, in the format HH:MM where HH is in [08, 17] and MM is in [00, 59]. Note that since the bank is closed everyday after 17:00, for those customers who cannot be served before 17:00, you must output “Sorry” instead.</p>
+<h2 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>2 2 7 5<br>1 2 6 4 3 534 2<br>3 4 5 6 7</p>
+<h2 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>08:07<br>08:06<br>08:10<br>17:00<br>Sorry</p>
+<p>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line"># 1014 by wbl@2017</div><div class="line">from collections import deque</div><div class="line">line1 = input().split()</div><div class="line"># line1 = [2, 2, 7, 5]</div><div class="line">N = int(line1[0])</div><div class="line">M = int(line1[1])</div><div class="line">K = int(line1[2])</div><div class="line">Q = int(line1[3])</div><div class="line">line2 = input().split()</div><div class="line"># line2 = [1, 2, 6, 4, 3, 534, 2]</div><div class="line">T = []</div><div class="line">for i in range(K):</div><div class="line">    T.append(int(line2[i]))</div><div class="line">line3 = input().split()</div><div class="line"># line3 = [3, 4, 5, 6, 7]</div><div class="line">queue = []</div><div class="line">for i in range(Q):</div><div class="line">    queue.append(int(line3[i]))</div><div class="line"></div><div class="line"># Sample Input</div><div class="line"># 2 2 7 5</div><div class="line"># 1 2 6 4 3 534 2</div><div class="line"># 3 4 5 6 7</div><div class="line">def change(h, m):</div><div class="line">    if h &lt; 10:</div><div class="line">        hour = &apos;0&apos; + str(h)</div><div class="line">    else:</div><div class="line">        hour = str(h)</div><div class="line">    if m &lt; 10:</div><div class="line">        mini = &apos;0&apos; + str(m)</div><div class="line">    else:</div><div class="line">        mini = str(m)</div><div class="line">    return hour + &apos;:&apos; + mini</div><div class="line">def calAns(endTime, delay):</div><div class="line">    if endTime == -1:</div><div class="line">        ans = &apos;Sorry&apos;</div><div class="line">    else:</div><div class="line">        if endTime - delay &gt;= 540:</div><div class="line">            ans = &apos;Sorry&apos;</div><div class="line">        else:</div><div class="line">            m = endTime % 60</div><div class="line">            h = 8 + int(endTime / 60)</div><div class="line">            ans = change(h, m)</div><div class="line">    return ans</div><div class="line"></div><div class="line">windows = &#123;&#125;</div><div class="line">for i in range(N):</div><div class="line">    windows[i] = deque()</div><div class="line">endTime = [-1 for i in range(K+1)]</div><div class="line">cusum = 0</div><div class="line">count = 1</div><div class="line">for ti in range(541):</div><div class="line">    </div><div class="line">    for i in range(N):</div><div class="line">        for j in range(len(windows[i])):</div><div class="line">            if ti == endTime[windows[i][0]]:</div><div class="line">                windows[i].popleft()</div><div class="line">                cusum -= 1</div><div class="line">                # print(windows)</div><div class="line">                # print(ti)</div><div class="line">                if len(windows[i]) &gt; 0:</div><div class="line">                    cu = windows[i][0]</div><div class="line">                    endTime[cu] = ti + T[cu-1]</div><div class="line">    while cusum &lt; M * N and count &lt;= K:</div><div class="line">        min = 0</div><div class="line">        for i in range(N):</div><div class="line">            if len(windows[i]) &lt; len(windows[min]):</div><div class="line">                min = i</div><div class="line">        if len(windows[min]) == 0:</div><div class="line">            endTime[count] = ti + T[count-1]</div><div class="line">        # if len(windows[min]) &lt; M and count &lt;= K:</div><div class="line">        if count &lt;= K:</div><div class="line">            windows[min].append(count)</div><div class="line">        count += 1</div><div class="line">        cusum += 1</div><div class="line">        # print(&apos;add queue:&apos;, windows, &apos;ti:&apos;, ti)</div><div class="line">        # print(&apos;endTime:&apos;, endTime)</div><div class="line"></div><div class="line">for i in queue:</div><div class="line">    ans = calAns(endTime[i], T[i-1])</div><div class="line">    print(ans)</div></pre></td></tr></table></figure></p>
+<p>以时间的分钟数为遍历的主线，每分钟检查是否有顾客处理完并进行结算，之后从黄线后边的队伍中选顾客进入队伍，算出endTime这个list，在输出结果时要注意17:00刚开始服务的顾客也要Sorry</p>
+<h1 id="1015-Reversible-Primes-20"><a href="#1015-Reversible-Primes-20" class="headerlink" title="1015. Reversible Primes (20)"></a>1015. Reversible Primes (20)</h1><p>题目：A reversible prime in any number system is a prime whose “reverse” in that number system is also a prime. For example in the decimal system 73 is a reversible prime because its reverse 37 is also a prime.</p>
+<p>Now given any two positive integers N (&lt; 105) and D (1 &lt; D &lt;= 10), you are supposed to tell if N is a reversible prime with radix D.</p>
+<h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>The input file consists of several test cases. Each case occupies a line which contains two integers N and D. The input is finished by a negative N.</p>
+<h2 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h2><p>For each test case, print in one line “Yes” if N is a reversible prime with radix D, or “No” if not.</p>
+<h2 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input:"></a>Sample Input:</h2><p>73 10<br>23 2<br>23 10<br>-2</p>
+<h2 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output:"></a>Sample Output:</h2><p>Yes<br>Yes<br>No</p>
+<p>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"># 1015 by wbl@2017</div><div class="line">flag = 1</div><div class="line">def isPrime(n):</div><div class="line">    if n == 0 or n == 1:</div><div class="line">        return 0</div><div class="line">    else:</div><div class="line">        for i in range(2, n):</div><div class="line">            if n % i == 0:</div><div class="line">                return 0</div><div class="line">    return 1</div><div class="line">def toDec(n, d):</div><div class="line">    tmp = str(n)</div><div class="line">    res = 0</div><div class="line">    for i in range(len(tmp)):</div><div class="line">        res += int(tmp[-i-1]) * (d ** i)</div><div class="line">    return res</div><div class="line">def tranToDreverse(n, d):</div><div class="line">    m = n % d</div><div class="line">    tmp = int((n - m) / d)</div><div class="line">    result = [str(m)]</div><div class="line">    while(tmp != 0):</div><div class="line">        m = tmp % d</div><div class="line">        result.append(str(m))</div><div class="line">        tmp = int((tmp - m) / d)</div><div class="line">    num = &apos;&apos;</div><div class="line">    for i in range(len(result)):</div><div class="line">        num += result[i]</div><div class="line">    # print(num)</div><div class="line">    num = toDec(int(num), d)</div><div class="line">    return num</div><div class="line">while(flag):</div><div class="line">    line = input().split()</div><div class="line">    if len(line) == 1 and int(line[0]) &lt; 0:</div><div class="line">        flag = 0</div><div class="line">        continue</div><div class="line">    else:</div><div class="line">        N = int(line[0])</div><div class="line">        D = int(line[1])</div><div class="line">        # print(N, D)</div><div class="line">        isNprime = isPrime(N)</div><div class="line">        if isNprime != 1:</div><div class="line">            print(&apos;No&apos;)</div><div class="line">            continue</div><div class="line">        else:</div><div class="line">            reverseN = tranToDreverse(N, D)</div><div class="line">            isReverseNPrime = isPrime(reverseN)</div><div class="line">            if isReverseNPrime != 1:</div><div class="line">                print(&apos;No&apos;)</div><div class="line">                continue</div><div class="line">            else:</div><div class="line">                print(&apos;Yes&apos;)</div><div class="line">                continue</div></pre></td></tr></table></figure></p>
+<p>需要注意的是0和1都不是素数</p>
+<h1 id="1016-Phone-Bills-25"><a href="#1016-Phone-Bills-25" class="headerlink" title="1016. Phone Bills (25)"></a>1016. Phone Bills (25)</h1><p>题目：A long-distance telephone company charges its customers by the following rules:</p>
+<p>Making a long-distance call costs a certain amount per minute, depending on the time of day when the call is made. When a customer starts connecting a long-distance call, the time will be recorded, and so will be the time when the customer hangs up the phone. Every calendar month, a bill is sent to the customer for each minute called (at a rate determined by the time of day). Your job is to prepare the bills for each month, given a set of phone call records.</p>
+<h2 id="Input-Specification-1"><a href="#Input-Specification-1" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case. Each case has two parts: the rate structure, and the phone call records.</p>
+<p>The rate structure consists of a line with 24 non-negative integers denoting the toll (cents/minute) from 00:00 - 01:00, the toll from 01:00 - 02:00, and so on for each hour in the day.</p>
+<p>The next line contains a positive number N (&lt;= 1000), followed by N lines of records. Each phone call record consists of the name of the customer (string of up to 20 characters without space), the time and date (mm:dd:hh:mm), and the word “on-line” or “off-line”.</p>
+<p>For each test case, all dates will be within a single month. Each “on-line” record is paired with the chronologically next record for the same customer provided it is an “off-line” record. Any “on-line” records that are not paired with an “off-line” record are ignored, as are “off-line” records not paired with an “on-line” record. It is guaranteed that at least one call is well paired in the input. You may assume that no two records for the same customer have the same time. Times are recorded using a 24-hour clock.</p>
+<h2 id="Output-Specification-1"><a href="#Output-Specification-1" class="headerlink" title="Output Specification:"></a>Output Specification:</h2><p>For each test case, you must print a phone bill for each customer.</p>
+<p>Bills must be printed in alphabetical order of customers’ names. For each customer, first print in a line the name of the customer and the month of the bill in the format shown by the sample. Then for each time period of a call, print in one line the beginning and ending time and date (dd:hh:mm), the lasting time (in minute) and the charge of the call. The calls must be listed in chronological order. Finally, print the total charge for the month in the format shown by the sample.</p>
+<h2 id="Sample-Input-3"><a href="#Sample-Input-3" class="headerlink" title="Sample Input:"></a>Sample Input:</h2><p>10 10 10 10 10 10 20 20 20 15 15 15 15 15 15 15 20 30 20 15 15 10 10 10<br>10<br>CYLL 01:01:06:01 on-line<br>CYLL 01:28:16:05 off-line<br>CYJJ 01:01:07:00 off-line<br>CYLL 01:01:08:03 off-line<br>CYJJ 01:01:05:59 on-line<br>aaa 01:01:01:03 on-line<br>aaa 01:02:00:01 on-line<br>CYLL 01:28:15:41 on-line<br>aaa 01:05:02:24 on-line<br>aaa 01:04:23:59 off-line</p>
+<h2 id="Sample-Output-3"><a href="#Sample-Output-3" class="headerlink" title="Sample Output:"></a>Sample Output:</h2><p>CYJJ 01<br>01:05:59 01:07:00 61 $12.10<br>Total amount: $12.10<br>CYLL 01<br>01:06:01 01:08:03 122 $24.40<br>28:15:41 28:16:05 24 $3.85<br>Total amount: $28.25<br>aaa 01<br>02:00:01 04:23:59 4318 $638.80<br>Total amount: $638.80</p>
+<p>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"># 1016 by wbl@2017</div><div class="line">from datetime import datetime</div><div class="line">from datetime import timedelta</div><div class="line">def calBill(pre, next, rate):</div><div class="line">    delta = next[0] - pre[0]</div><div class="line">    d = delta.days</div><div class="line">    m = int(delta.seconds / 60)</div><div class="line">    now = pre[0]</div><div class="line">    if d &gt; 0:</div><div class="line">        priceDay = d * 60 * sum(rate)</div><div class="line">    else:</div><div class="line">        priceDay = 0</div><div class="line">    priceMin = 0</div><div class="line">    for i in range(1, m+1):</div><div class="line">        priceMin += rate[now.hour] </div><div class="line">        now += timedelta(minutes=1)</div><div class="line">    price = (priceDay + priceMin) / 100</div><div class="line">    minutes = m + d * 24 * 60</div><div class="line">    bill = pre[0].strftime(&apos;%d:%H:%M&apos;) + &apos; &apos; + next[0].strftime(&apos;%d:%H:%M&apos;) + &apos; &apos; + str(minutes) + &apos; $&apos; + &apos;%0.2f&apos; % price</div><div class="line">    return bill</div><div class="line"></div><div class="line">line1 = input().split()</div><div class="line">rate = [int(i) for i in line1]</div><div class="line">line2 = input()</div><div class="line">recordNum = int(line2)</div><div class="line">rec = &#123;&#125;</div><div class="line">bills = &#123;&#125;</div><div class="line">for i in range(recordNum):</div><div class="line">    line = input().split()</div><div class="line">    name = line[0]</div><div class="line">    time = line[1]</div><div class="line">    month = time.split(&apos;:&apos;)[0]</div><div class="line">    state = 0 if line[2] == &apos;on-line&apos; else 1    # 0 for on-line and 1 for off-line</div><div class="line">    if name not in rec.keys():</div><div class="line">        rec[name] = [[datetime.strptime(time, &apos;%m:%d:%H:%M&apos;), state]]</div><div class="line">    else:</div><div class="line">        rec[name].append([datetime.strptime(time, &apos;%m:%d:%H:%M&apos;), state])</div><div class="line">for name, record in rec.items():</div><div class="line">    sortedRec = sorted(record, key=lambda x: x[0])</div><div class="line">    pre = sortedRec[0]</div><div class="line">    for i in range(1, len(sortedRec)):</div><div class="line">        if sortedRec[i][1] == 1 and pre[1] == 0:</div><div class="line">            bill = calBill(pre, sortedRec[i], rate)</div><div class="line">            title = name + &apos; &apos; + month</div><div class="line">            if title not in bills.keys():</div><div class="line">                bills[title] = [bill]</div><div class="line">            else:</div><div class="line">                bills[title].append(bill)</div><div class="line">            pre = sortedRec[i]</div><div class="line">        else:</div><div class="line">            pre = sortedRec[i]</div><div class="line"></div><div class="line">titles = list(bills.keys())</div><div class="line">titles.sort()</div><div class="line">for key in titles:</div><div class="line">     print(key)</div><div class="line">     total = 0</div><div class="line">     for i in bills[key]:</div><div class="line">        print(i)</div><div class="line">        total += float(i.split()[3][1:])</div><div class="line">     print(&apos;Total amount: $&apos; + &apos;%0.2f&apos; % total)</div></pre></td></tr></table></figure></p>
+<p>所谓的配对是指相邻的一个online和offline</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+            <a href="/tags/PAT/" rel="tag">#PAT</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/10/pat1009_1012/" rel="next" title="PAT甲级1009-1012">
+                <i class="fa fa-chevron-left"></i> PAT甲级1009-1012
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Boolean Wang" />
+          <p class="site-author-name" itemprop="name">Boolean Wang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1013-Battle-Over-Cities-25"><span class="nav-number">1.</span> <span class="nav-text">1013. Battle Over Cities (25)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">1.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">1.2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input"><span class="nav-number">1.3.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output"><span class="nav-number">1.4.</span> <span class="nav-text">Sample Output</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1014-Waiting-in-Line-30"><span class="nav-number">2.</span> <span class="nav-text">1014. Waiting in Line (30)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-1"><span class="nav-number">2.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-1"><span class="nav-number">2.2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-1"><span class="nav-number">2.3.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output-1"><span class="nav-number">2.4.</span> <span class="nav-text">Sample Output</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1015-Reversible-Primes-20"><span class="nav-number">3.</span> <span class="nav-text">1015. Reversible Primes (20)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-Specification"><span class="nav-number">3.1.</span> <span class="nav-text">Input Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-Specification"><span class="nav-number">3.2.</span> <span class="nav-text">Output Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-2"><span class="nav-number">3.3.</span> <span class="nav-text">Sample Input:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output-2"><span class="nav-number">3.4.</span> <span class="nav-text">Sample Output:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1016-Phone-Bills-25"><span class="nav-number">4.</span> <span class="nav-text">1016. Phone Bills (25)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-Specification-1"><span class="nav-number">4.1.</span> <span class="nav-text">Input Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-Specification-1"><span class="nav-number">4.2.</span> <span class="nav-text">Output Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-3"><span class="nav-number">4.3.</span> <span class="nav-text">Sample Input:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output-3"><span class="nav-number">4.4.</span> <span class="nav-text">Sample Output:</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Boolean Wang</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
